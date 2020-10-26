@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styled, { css } from 'styled-components';
+import { motion } from 'framer-motion';
 
 const ButtonBox = styled.div`
     max-width:${props => props.maxWidth ? props.maxWidth : "144px"};
@@ -13,21 +14,26 @@ const ButtonBox = styled.div`
     font-weight:${props => props.fontWeight ? props.fontWeight : "normal"};
     font-size:${props => props.fontSize ? props.fontSize : "20px"};
     background:${props => props.backgroundColor ? props.backgroundColor : "#FFBF00"};
-    border:${props => props.border ? props.border : "none"}
+    border:${props => props.border ? props.border : "none"};
 `;
 
 
-const Button = ({ text, fontWeight, fontSize, backgroundColor, maxWidth, minHeight, border  }) => {
+const Button = ({ text, fontWeight, fontSize, backgroundColor, maxWidth, minHeight, border }) => {
 
-    return <ButtonBox
-    fontWeight={fontWeight} fontSize={fontSize} backgroundColor={backgroundColor} maxWidth={maxWidth} minHeight={minHeight} border={border}
+    return <motion.div
+
     >
+        <ButtonBox
+            fontWeight={fontWeight} fontSize={fontSize} backgroundColor={backgroundColor} maxWidth={maxWidth} minHeight={minHeight} border={border}
+        >
             {text}
         </ButtonBox>
+    </motion.div>
+
 }
 
 Button.defaultProps = {
-    text:"Text",
+    text: "Text",
 }
 
 export default Button;
