@@ -1,9 +1,9 @@
 import React from 'react';
-import Button from '../comps/Button';
+import ButtonTemplate from '../comps/ButtonTemplate';
 
 export default {
-    title: 'Example/Button',
-    component: Button
+    title: 'ButtonTemplate/Button',
+    component: ButtonTemplate
 };
 
-export const BasicButton = () => <Button />;
+export const BasicButtonTemplate = () => <ButtonTemplate />;
