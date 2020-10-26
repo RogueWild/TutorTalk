@@ -21,7 +21,7 @@ const ButtonBox = styled.div`
 `;
 
 
-const Button = ({ text, }) => {
+const ButtonTemplate = ({ text, }) => {
     const [disabled, setDisabled] = useState(false);
 
     useEffect(() => {
@@ -47,9 +47,9 @@ const Button = ({ text, }) => {
     </motion.div>
 }
 
-Button.defaultProps = {
+ButtonTemplate.defaultProps = {
     text: "Button",
     disabled: false
 }
 
-export default Button;
+export default ButtonTemplate;
