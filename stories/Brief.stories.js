@@ -2,7 +2,7 @@ import React from 'react';
 import Brief from '../comps/Brief';
 
 export default {
-    title: 'Example/Brief',
+    title: 'Div/Brief',
     component: Brief
 };
 

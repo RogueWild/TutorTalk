@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import styled, {css} from 'styled-components';
 
 const Container = styled.div`
+    margin: 5px 0px;
     width: 500px;
     min-height: 50px;
     display: inline-flex;
@@ -11,9 +12,9 @@ const Container = styled.div`
 `;
 
 const IconImg = styled.img`
+    margin: 0px 10px 0px 0px;
     width: 32px;
     height: 32px;
-    margin: 15px 0px;
 `;
 
 const TextData = styled.p`
@@ -24,7 +25,7 @@ const TextData = styled.p`
     font-size: 20px;
     line-height: 24px;
     color: #424242;
-    margin-left: 10px;
+    margin: 5px 10px;
     text-align: left;
     border: ${props=>props.focused ? "1px solid #424242" : ""};
     box-sizing: border-box;

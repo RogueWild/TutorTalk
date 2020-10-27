@@ -32,12 +32,13 @@ const AddBtn = styled.div`
 `;
 
 const ProfilePic = ({}) => {
-    const [highlight, sethighlight] = useState(false)
+    const [highlight, sethighlight] = useState(false);
+    const [text, setText] = useState("Profile Pic");
     return <Container onClick={()=> {
-        sethighlight(true);
+        sethighlight(true),text = "Add Photo";
     }} highlight = {highlight}>
     <AddBtn highlight = {highlight}>
-        <PicTxt highlight = {highlight}>Profile Pic</PicTxt>
+        <PicTxt onClick={() => setText("Add Photo")} highlight = {highlight}>{text}</PicTxt>
     </AddBtn>
     </Container>
 }
