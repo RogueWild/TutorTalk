@@ -13,10 +13,17 @@ padding: 10px;
 border-color: #424242;
 `;
 
-const AboutBox = ({text, color, size}) => {
-    return <AboutDiv color={color} size={size}>           
+const AboutHeader = styled.div`
+font-size: 36px;
+`
+
+const AboutBox = ({text, color, size, text2}) => {
+    return <AboutHeader> {text2} 
+    <AboutDiv color={color} size={size}>           
             {text}
     </AboutDiv>
+    </AboutHeader> 
+    
 }
 
 

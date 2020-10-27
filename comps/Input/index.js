@@ -1,7 +1,7 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 
-const InputBox = styled.form`
+const InputBox = styled.input`
 width: 459px;
 height: 56px;
 ${props=>props.color === 0 && css`
