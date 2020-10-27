@@ -7,3 +7,4 @@ export default {
 };
 
 export const BasicInputBox = () => <InputText color={0} text={"email"} size={0}/>;
+export const BasicPasswordBox = () => <InputText color={0} text={"password"} size={0}/>;

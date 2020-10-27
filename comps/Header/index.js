@@ -15,9 +15,17 @@ ${props=>props.size === 2 && css`
 font-size: 50px;   `};
 `;
 
-const HeaderAccount = ({text, color, size}) => {
+const TutorTalk = styled.div`
+color:#FFBF00;
+font-size: 50px;
+display:flex;
+margin-left: 5px;
+`;
+
+
+const HeaderAccount = ({text, color, size, text2, size2, color2}) => {
     return <HeaderDiv color={color} size={size}>           
-            {text}
+            {text}<TutorTalk color2={color2} size2={size2}> {text2}</TutorTalk>
     </HeaderDiv>
 }
 
