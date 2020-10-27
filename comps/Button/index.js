@@ -17,17 +17,24 @@ const ButtonBox = styled.div`
     border:${props => props.border ? props.border : "none"};
 
     &:hover {
-        background-color:${props => props.hoverColor ? props.hoverColor : "#FFCC33"};
+        background-color:${props => props.hoverColor ? props.hoverColor : "#D79B00"};
     }
 `;
 
 
 const Button = ({ text, fontWeight, fontSize, backgroundColor, hoverColor, maxWidth, minHeight, border }) => {
+    const [disabled, setDisabled] = useState(false);
+
+    useEffect(() => {
+        setDisabled(disabled);
+    }, [disabled])
 
     return <motion.div
-    
+
     >
-        <ButtonBox
+        <ButtonBox disabled={disabled}
+            onClick={() =>
+                setDisabled(!disabled)}
             fontWeight={fontWeight} fontSize={fontSize} backgroundColor={backgroundColor} hoverColor={hoverColor} maxWidth={maxWidth} minHeight={minHeight} border={border}
         >
             {text}
@@ -38,6 +45,7 @@ const Button = ({ text, fontWeight, fontSize, backgroundColor, hoverColor, maxWi
 
 Button.defaultProps = {
     text: "Text",
+    disabled: false
 }
 
 export default Button;
