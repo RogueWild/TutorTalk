@@ -13,18 +13,22 @@ const ButtonBox = styled.div`
     color:white;
     font-weight:${props => props.fontWeight ? props.fontWeight : "normal"};
     font-size:${props => props.fontSize ? props.fontSize : "20px"};
-    background:${props => props.backgroundColor ? props.backgroundColor : "#FFBF00"};
+    background-color:${props => props.backgroundColor ? props.backgroundColor : "#FFBF00"};
     border:${props => props.border ? props.border : "none"};
+
+    &:hover {
+        background-color:${props => props.hoverColor ? props.hoverColor : "#FFCC33"};
+    }
 `;
 
 
-const Button = ({ text, fontWeight, fontSize, backgroundColor, maxWidth, minHeight, border }) => {
+const Button = ({ text, fontWeight, fontSize, backgroundColor, hoverColor, maxWidth, minHeight, border }) => {
 
     return <motion.div
-
+    
     >
         <ButtonBox
-            fontWeight={fontWeight} fontSize={fontSize} backgroundColor={backgroundColor} maxWidth={maxWidth} minHeight={minHeight} border={border}
+            fontWeight={fontWeight} fontSize={fontSize} backgroundColor={backgroundColor} hoverColor={hoverColor} maxWidth={maxWidth} minHeight={minHeight} border={border}
         >
             {text}
         </ButtonBox>
