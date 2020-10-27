@@ -20,7 +20,7 @@ const Menus = styled.div`
 const SidebarMenu = ({ source, text }) => {
 
     return <motion.div
-        whileHover={{ x: 10, textShadow:"0px 4px 7px rgba(0, 0, 0, 0.25)" }}
+        whileHover={{ x: 10}}
         whileTap={{ scale: 0.9, x: 0 }}
     >
         <SidebarMenuBox>
