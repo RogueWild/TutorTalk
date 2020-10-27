@@ -17,6 +17,10 @@ const NavContent = styled.div`
     justify-content:space-around;
     min-width:45%;
     color:#424242;
+    .navtext:hover{
+        font-weight:bold;
+        transition:font-weight 0.25s;
+    }
     .navtext{
         cursor:pointer;
 
@@ -27,9 +31,13 @@ const NavContent = styled.div`
             background-color:#424242;
             border-radius:70px;
         }
+        .hr, .hr1, .hr2, .hr3{
+            display:none;
+        }
         .hr{
-            left:29.4%;
-            min-width:8%;
+            left:28.8%;
+            min-width:9%;
+   
         }
         .hr1{
             left:40%;
@@ -49,23 +57,49 @@ const NavContent = styled.div`
    
 `;
 
+const NavBar = styled.div`
+    ${props=>props.position === 0 && css`
+    left:28.7%;
+    `};
+    ${props=>props.position === 1 && css`
+    left:39.5%;
+    `};
+    ${props=>props.position === 2 && css`
+    left:50.9%;
+    `};
+    ${props=>props.position === 3 && css`
+    left:62.4%;
+    `};
+    background-color:#424242;
+    min-width:9%;
+    min-height:3.5px;
+    border-radius:15px;
+    position:absolute;
+    top:8.9%;
+`;
 
-const Nav = ({display}) => {
+const Nav = ({position}) => {
     return <div>
         <NavBox>
             <NavContent>
-                <div className="navtext">Profile
-                    <hr className="hr" display={0}></hr>
+                <div className="navtext" onClick={()=>{
+                }}>Profile
+                    <hr className="hr"></hr>
                 </div>
-                <div className="navtext">Forum
+
+                <div className="navtext" onClick={()=>{
+                }}>Forum
                     <hr className="hr1"></hr>
                 </div>
-                <div className="navtext">Tutor Tips
+
+                <div className="navtext" >Tutor Tips
                     <hr className="hr2"></hr>
                 </div>
-                <div className="navtext">Tutors
+
+                <div className="navtext" >Tutors
                     <hr className="hr3"></hr>
                 </div>
+                <NavBar position={position}></NavBar>
             </NavContent>
         </NavBox>
     </div>
@@ -73,7 +107,7 @@ const Nav = ({display}) => {
 }
 
 Nav.defaultProps = {
-    display:"none"
+    position:0
 }
 
 export default Nav;
