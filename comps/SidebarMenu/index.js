@@ -7,10 +7,12 @@ const SidebarMenuBox = styled.div`
     align-items:center;
     margin:15px 40px;
     cursor:pointer;
+    user-select: none;
 `;
 
 const Icons = styled.img`
     padding-right:15px;
+    user-drag: none;
 `;
 
 const Menus = styled.div`
@@ -30,7 +32,6 @@ const SidebarMenu = ({ source, text }) => {
             </Menus>
         </SidebarMenuBox>
     </motion.div>
-
 }
 
 SidebarMenu.defaultProps = {

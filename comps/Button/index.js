@@ -21,31 +21,29 @@ const ButtonBox = styled.div`
     }
 `;
 
+const Cont = styled.div`
+    max-width:${props => props.maxWidth ? props.maxWidth : "144px"};
+    min-height:${props => props.minHeight ? props.minHeight : "42px"};
+`;
 
 const Button = ({ text, fontWeight, fontSize, backgroundColor, hoverColor, maxWidth, minHeight, border }) => {
-    const [disabled, setDisabled] = useState(false);
 
-    useEffect(() => {
-        setDisabled(disabled);
-    }, [disabled])
 
-    return <motion.div
-
-    >
-        <ButtonBox disabled={disabled}
-            onClick={() =>
-                setDisabled(!disabled)}
-            fontWeight={fontWeight} fontSize={fontSize} backgroundColor={backgroundColor} hoverColor={hoverColor} maxWidth={maxWidth} minHeight={minHeight} border={border}
+    return <Cont>
+        <motion.div
+            whileTap={{ scale: 0.9 }}
         >
-            {text}
-        </ButtonBox>
-    </motion.div>
-
+            <ButtonBox
+                fontWeight={fontWeight} fontSize={fontSize} backgroundColor={backgroundColor} hoverColor={hoverColor} maxWidth={maxWidth} minHeight={minHeight} border={border}
+            >
+                {text}
+            </ButtonBox>
+        </motion.div>
+    </Cont>
 }
 
 Button.defaultProps = {
     text: "Text",
-    disabled: false
 }
 
 export default Button;
