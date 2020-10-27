@@ -18,8 +18,8 @@ font-size: 50px;   `};
 const TutorTalk = styled.div`
 color:#FFBF00;
 font-size: 50px;
-display:flex;
-margin-left: 5px;
+display: inline flex;
+margin-left: 10px;
 `;
 
 
