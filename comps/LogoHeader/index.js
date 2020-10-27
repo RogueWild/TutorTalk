@@ -22,20 +22,26 @@ const LogoHeadBox = styled.div`
     }
    .profile-icon {
        cursor:pointer;
+       .circle:hover{
+            min-width:43px;
+            min-height:43px;
+       }
        .circle {
            min-width:40px;
            min-height:40px;
            background-color:#FCCA36;
            border-radius:50%;
-           float:left;
-           font-size:18pt;
-           font-weight:bold;
-           color:#FFF;
-           text-align:center;
            .profile-initial {
-               position:relative;
-               top:6.4px;
-               left:0.5px;
+                color:#000;
+                font-size:18pt;
+                font-weight:bold;
+                text-align:center;
+                position:relative;
+                top:6px;
+                left:0;
+           }
+           .profile-initial:hover{
+                top:8px;
            }
        }
    }
