@@ -9,11 +9,7 @@ const TipsBox = styled.div`
     background-color:#FFF3D3;
     border-radius:5px;
     padding:20px;
-    .tipstutor{
-        font-size:14pt;
-        font-weight:bold;
-        cursor:pointer;
-    }
+
     .tiptextbox{
         background-color:#FFF;
         padding:18px;
@@ -27,11 +23,36 @@ const TipsBox = styled.div`
     }
 `;
 
-const Tips = ({tutorname, tutorstat, tiptext}) => {
+const TutorName = styled.div`
+    font-size:14pt;
+    font-weight:bold;
+    cursor:pointer;
+`;
+
+const TutorInfo = styled.div`
+    font-size:12pt;
+    cursor:pointer;
+`;
+
+
+
+export const FramerCont = ({tutorname, tutorinfo}) => {
+    return <motion.div whileHover={{scale:1.015}}>
+        <TutorName>
+            {tutorname}
+        </TutorName>
+        <TutorInfo>
+            {tutorinfo}
+        </TutorInfo>
+    </motion.div>
+}
+
+const Tips = ({tutorname, tutorinfo, tiptext}) => {
     return <TipsBox>
         <div className="tipstitle">
-            <div className="tipstutor">{tutorname}</div>
-            <div className="tutorstat">{tutorstat}</div>
+            <FramerCont 
+            tutorname={tutorname} tutorinfo={tutorinfo}>
+            </FramerCont>
         </div>
         <div className="tiptextbox">
             <div className="tiptext">{tiptext}</div>
@@ -43,7 +64,7 @@ const Tips = ({tutorname, tutorstat, tiptext}) => {
 
 Tips.defaultProps = {
     tutorname:"Tutor's Name",
-    tutorstat:"Tutor Type - Course Name",
+    tutorinfo:"Tutor Type - Course Name",
     tiptext:"Tips from the tutor go here"
 }
 

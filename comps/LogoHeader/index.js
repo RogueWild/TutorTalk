@@ -13,26 +13,29 @@ const LogoHeadBox = styled.div`
    .logobox {
        display:flex;
        align-items:center;
+       cursor:pointer;
 
        .logo-icon {
-        max-height:50px;
-        max-width:50px;
-        padding-right:11px;
+            max-height:50px;
+            max-width:50px;
+            padding-right:11px;
+        }
+        .logo-icon:hover {
+            max-height:54px;
+            max-width:54px;
+            cursor:pointer;
+            transition: max-height 0.2s, max-width 0.2s;
         }
     }
+
    .profile-icon {
        cursor:pointer;
-       .circle:hover{
-            min-width:43px;
-            min-height:43px;
-       }
-       .circle {
-           min-width:40px;
-           min-height:40px;
-           background-color:#FCCA36;
-           border-radius:50%;
+       min-width:40px;
+       min-height:40px;
+       background-color:#FCCA36;
+       border-radius:50%;
            .profile-initial {
-                color:#000;
+                color:#FFF;
                 font-size:18pt;
                 font-weight:bold;
                 text-align:center;
@@ -40,10 +43,11 @@ const LogoHeadBox = styled.div`
                 top:6px;
                 left:0;
            }
-           .profile-initial:hover{
-                top:8px;
-           }
-       }
+   }
+   .profile-icon:hover {
+        min-width:42px;
+        min-height:42px;
+        transition: min-width 0.2s, min-height 0.2s;
    }
    
 `;
@@ -55,14 +59,12 @@ const LogoHeader = ({text}) => {
             <div className="logobox">
                 <img className="logo-icon" src="logo.svg"/>
                 <div className="apptitle">
-                    <div>TUTOR</div>
-                    <div>TALK</div>
+                    <div><b>TUTOR</b></div>
+                    <div><b>TALK</b></div>
                 </div>
             </div>
             <div className="profile-icon">
-                <div className="circle">
-                    <div className="profile-initial">{text}</div>
-                </div>
+                <div className="profile-initial">{text}</div>
             </div>
         </LogoHeadBox>
     </div>
