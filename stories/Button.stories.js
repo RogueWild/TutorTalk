@@ -1,6 +1,5 @@
 import React from 'react';
 import ButtonTemplate from '../comps/ButtonTemplate';
-
 import Button from '../comps/Button';
 
 export default {
