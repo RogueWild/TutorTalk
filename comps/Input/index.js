@@ -20,8 +20,7 @@ margin-left: 15px;
 `
 
 const InputText = ({text, color, size}) => {
-    return <InputBox color={color} size={size}>           
-            <TextBox> {text} </TextBox>
+    return <InputBox color={color} size={size}>
     </InputBox>
 }
 
