@@ -1,9 +1,10 @@
 import React from 'react';
-import BriefInput from '../comps/BriefInput';
+import InputText from '../comps/Input';
 
 export default {
-    title: 'Input/BriefInput',
-    component: BriefInput
+    title: 'Input/Text',
+    component: InputText,
 };
 
-export const BasicBriefInput = () => <BriefInput image={true} />;
+export const BasicInputBox = () => <InputText color={0} text={"email"} size={0}/>;
+export const BasicPasswordBox = () => <InputText color={0} text={"password"} size={0}/>;
