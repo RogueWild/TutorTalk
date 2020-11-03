@@ -11,7 +11,7 @@ export default function Home() {
     <div className="main">
         <LogoHeader className="LogoHeader"></LogoHeader>
         <Nav className="Nav"></Nav>
-        <SearchBar className="SearchBar"></SearchBar>
+        <SearchBar className="SearchBar" marginN="338px 0px 108px 50px"></SearchBar>
         <ProfilePic className="ProfilePic"></ProfilePic>
         <Summary className="Summary"></Summary>
         <Contact className="Contact"></Contact>
