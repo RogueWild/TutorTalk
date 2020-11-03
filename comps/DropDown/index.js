@@ -6,6 +6,7 @@ import Button from '../Button';
 const DropDownBox = styled.div`
     background-color:#FFF;
     border: 0.25px solid #999;
+    min-width:150px;
     max-width:150px;
     justify-content:center;
     align-items:center;
