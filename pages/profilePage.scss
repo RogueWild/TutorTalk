@@ -1,0 +1,20 @@
+html, body {
+    margin:0;
+}
+.content-box {
+    display: flex;
+    margin:100px 70px 20px 70px;
+    .left-side, .right-side {
+        display:flex;
+        flex-direction:column;
+        padding-right: 50px;
+        .contact {
+            padding-top:30px;
+        }
+    }
+    .right-side {
+        .about-box {
+            padding:30px 0px;
+        }
+    }
+}
