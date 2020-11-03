@@ -6,7 +6,7 @@ const Container = styled.div`
     display: flex;
     align-items: left;
     justify-content: left;
-    margin: ${props=>props.marginN ? marginN : ""}
+    margin: ${props=>props.marginN ? props.marginN : ""}
 `;
 
 const SearchBox = styled.input`
