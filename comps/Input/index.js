@@ -2,34 +2,25 @@ import React from 'react';
 import styled, { css } from 'styled-components';
 
 const InputBox = styled.input`
-width: 459px;
-height: 56px;
-${props=>props.color === 0 && css`
-color:#BDBDBD;   `};
-${props=>props.size === 0 && css`
-size:25px;   `};
-background-color: #FBFBFB;
-box-shadow: 1px 1px #BDBDBD inset;
-border-radius: 7px;
+    width:${props => props.width ? props.width : ""};
+    margin:${props => props.margin ? props.margin : "0"};
+    padding: 16px 16px 16px 16px;
+    border: none;
+    border-radius:7px;
+    background: #FBFBFB;
+    font-size: 18px;
+    ::-webkit-input-placeholder {
+        color: #BDBDBD;
 `;
 
-const TextBox = styled.div`
-position: absolute;
-margin-top: 20px;
-margin-left: 15px;
-`
-
-const InputText = ({text, color, size}) => {
-    return <InputBox color={color} size={size}>           
-            <TextBox> {text} </TextBox>
+const InputText = ({ placeholder, width, margin }) => {
+    return <InputBox placeholder={placeholder} width={width} margin={margin}>
     </InputBox>
 }
 
 
 InputText.defaultProps = {
-    text: "email",
-    color: "#BDBDBD",
-    size: "25px",
+    placeholder: "Defaul Text"
 }
 
 
