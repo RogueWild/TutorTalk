@@ -17,7 +17,7 @@ const HeaderAccount = ({text, fontSize, fontWeight, color, margin }) => {
 
 
 HeaderAccount.defaultProps = {
-    texy:"Default Header"
+    text:"Default Header"
 }
 
 
