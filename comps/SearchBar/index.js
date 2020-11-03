@@ -9,9 +9,9 @@ const Container = styled.div`
 `;
 
 const SearchBox = styled.input`
-    width: 672px;
-    height: 67px;
-    margin: 0px 20px 0px;
+    min-width: 400px;
+    max-height: 40px;
+    margin: 10px 20px 0px;
     border: 1px solid #424242;
     box-sizing: border-box;
     border-radius: 6px;
