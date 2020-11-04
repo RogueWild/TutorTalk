@@ -57,19 +57,15 @@ const LogoHeadDropDown = styled.div`
    .dropdown {
        position:absolute;
        left:86%;
-       top:90px;
-       width:145%;
-       display: ${props=>props.expanded ? "block" : "hidden"};
+       top:77px;
+       max-width:150px;
+       display: ${props=>props.expanded ? "none" : "block"};
    }
 `;
 
 
-const LogoHeader = ({expand, text}) => {
+const LogoHeader = ({text}) => {
     const [expanded, setExpanded] = useState(false);
-
-    useEffect(()=>{
-        setExpanded(expand);
-    },[expand])
 
     return <div>
         <LogoHeadBox>
@@ -86,7 +82,7 @@ const LogoHeader = ({expand, text}) => {
                 <div className="profile-initial">{text}</div>
             </div>
         </LogoHeadBox>
-        <LogoHeadDropDown>
+        <LogoHeadDropDown expanded = {expanded}>
         <div className ="dropdown">
                 <DropDown />
         </div>
@@ -97,7 +93,7 @@ const LogoHeader = ({expand, text}) => {
 
 LogoHeader.defaultProps = {
     text:"U",
-    expand:false
+    expanded:false
 }
 
 export default LogoHeader;
