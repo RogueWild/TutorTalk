@@ -9,12 +9,51 @@ import Contact from '../comps/Contact';
 export default function Home() {
   return (
     <div className="main">
-        <LogoHeader className="LogoHeader"></LogoHeader>
-        <Nav className="Nav"></Nav>
-        <SearchBar className="SearchBar" marginN="100px 0px 108px 50px"></SearchBar>
-        <ProfilePic className="ProfilePic"></ProfilePic>
-        <Summary className="Summary"></Summary>
-        <Contact className="Contact"></Contact>
+      <LogoHeader className="LogoHeader"></LogoHeader>
+      <Nav className="Nav"></Nav>
+      <SearchBar className="SearchBar" marginN="40px 0px 100px 50px"></SearchBar>
+      
+        <div className="Content">
+          <div className="Left">
+            <div className="ProfilePic">
+              <ProfilePic></ProfilePic>
+            </div>
+            <div className="Summary">
+              <Summary></Summary>
+            </div>
+          </div>
+          <div className="Right">
+            <Contact className="Contact"></Contact>
+          </div>
+        </div>
+
+        <div className="Content">
+          <div className="Left">
+            <div className="ProfilePic">
+              <ProfilePic></ProfilePic>
+            </div>
+            <div className="Summary">
+              <Summary></Summary>
+            </div>
+          </div>
+          <div className="Right">
+            <Contact className="Contact"></Contact>
+          </div>
+        </div>
+
+        <div className="Content">
+          <div className="Left">
+            <div className="ProfilePic">
+              <ProfilePic></ProfilePic>
+            </div>
+            <div className="Summary">
+              <Summary></Summary>
+            </div>
+          </div>
+          <div className="Right">
+            <Contact className="Contact"></Contact>
+          </div>
+        </div>
     </div>
   )
 }

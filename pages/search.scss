@@ -1,6 +1,19 @@
+html, body {
+    margin:0;
+}
 .main {
     background-color: white;
-    .SearchBar {
-        margin-left: 10px;
+    .Content {
+        display: flex;
+        margin-bottom: 200px;
+        .Left, .Right {
+            display:flex;
+        }
+        .Left {
+            margin-left: 70px;
+            .Summary {
+                margin-left: 50px;
+            }
+        }
     }
 }
