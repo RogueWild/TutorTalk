@@ -29,6 +29,9 @@ const DropDown = ({}) => {
                 <Button text="Edit Profile"/>
             </div>
             <div className="buttons">
+                <Button text="Edit Account"/>
+            </div>
+            <div className="buttons">
                 <Button text="Log Out" backgroundColor="#424242" hoverColor="#C4C4C4"/>
             </div>
         </DropDownContent>
