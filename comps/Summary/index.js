@@ -19,9 +19,6 @@ const Header = styled.h1`
     font-size: 50px;
     line-height: 61px;
     color: #424242;
-    border: ${props=>props.focused ? "1px solid #424242;" : ""};
-    box-sizing: border-box;
-    border-radius: 4px;
 `;
 
 const SubHeader = styled.h2`
@@ -31,18 +28,12 @@ const SubHeader = styled.h2`
     font-size: 28px;
     line-height: 154.8%;
     color: #000000;
-    border: ${props=>props.focused ? "1px solid #424242;" : ""};
-    box-sizing: border-box;
-    border-radius: 4px;
 `;
 
 const Summary = ({HeadTxt, SubTxt}) => {
-    const [focused, setfocused] = useState(false)
-    return <Container onClick={()=> {
-        setfocused(true);
-    }}> 
-        <Header focused={focused}>{HeadTxt}</Header>
-        <SubHeader focused={focused}>{SubTxt}</SubHeader>
+    return <Container> 
+        <Header >{HeadTxt}</Header>
+        <SubHeader>{SubTxt}</SubHeader>
         
         <Brief image={true} width="498px"/>
         <Brief image={true} src="/mortarboard.png" text="Diploma of Computer Science

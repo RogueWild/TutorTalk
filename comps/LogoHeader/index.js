@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styled, { css } from 'styled-components';
 import { motion } from 'framer-motion';
+import DropDown from '../DropDown';
 
 const LogoHeadBox = styled.div`
    display:flex;
@@ -52,8 +53,20 @@ const LogoHeadBox = styled.div`
    
 `;
 
+const LogoHeadDropDown = styled.div`
+   .dropdown {
+       position:absolute;
+       left:86%;
+       top:77px;
+       max-width:150px;
+       display: ${props=>props.expanded ? "none" : "block"};
+   }
+`;
+
 
 const LogoHeader = ({text}) => {
+    const [expanded, setExpanded] = useState(false);
+
     return <div>
         <LogoHeadBox>
             <div className="logobox">
@@ -63,16 +76,24 @@ const LogoHeader = ({text}) => {
                     <div><b>TALK</b></div>
                 </div>
             </div>
-            <div className="profile-icon">
+            <div className="profile-icon" onClick={()=>{
+                setExpanded(!expanded);
+            }}>
                 <div className="profile-initial">{text}</div>
             </div>
         </LogoHeadBox>
+        <LogoHeadDropDown expanded = {expanded}>
+        <div className ="dropdown">
+                <DropDown />
+        </div>
+        </LogoHeadDropDown>
     </div>
 
 }
 
 LogoHeader.defaultProps = {
-    text:"U"
+    text:"U",
+    expanded:false
 }
 
 export default LogoHeader;

@@ -8,13 +8,13 @@ const Container = styled.div`
     display: inline-flex;
     justify-content: left;
     align-items: left;
-    margin-left: ${props=>props.marL ? props.marL : ""}
+    margin-left: ${props=>props.marL ? props.marL : ""};
 `;
 const InputBox = styled.input`
     margin: 5px 0px;
     width: 500px;
     height: 30px;
-    margin-left: ${props=>props.marL ? props.marL : ""}
+    margin-left: ${props=>props.marL ? props.marL : ""};
 `;
 
 const IconImg = styled.img`
@@ -25,9 +25,7 @@ const IconImg = styled.img`
 
 const BriefInput = ({src,text,width,image,marL,TxtColor}) => {
     return <Container> {image === false ? null : <IconImg src={src}></IconImg>}
-    <InputBox onClick={()=> {
-        setfocused(true);
-    }} marL={marL}>
+    <InputBox marL={marL}>
 </InputBox>
 </Container>
 }
