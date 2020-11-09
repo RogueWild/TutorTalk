@@ -11,6 +11,7 @@ const InputBox = styled.input`
     font-size: 18px;
     ::-webkit-input-placeholder {
         color: #BDBDBD;
+    }
 `;
 
 const InputText = ({ placeholder, width, margin }) => {
