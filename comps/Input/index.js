@@ -10,8 +10,10 @@ const InputBox = styled.input`
     background: #FBFBFB;
     font-size: 18px;
     ::-webkit-input-placeholder {
-        color: #BDBDBD;}
+        color: #BDBDBD;
+}
 `;
+
 
 const InputText = ({ placeholder, width, margin }) => {
     return <InputBox placeholder={placeholder} width={width} margin={margin}>
