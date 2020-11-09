@@ -28,12 +28,12 @@ const Cont = styled.div`
 
 const Button = ({ text, fontWeight, fontSize, backgroundColor, hoverColor, maxWidth, minWidth, minHeight, border }) => {
 
-
     return <Cont>
         <motion.div
             whileTap={{ scale: 0.9 }}
         >
             <ButtonBox
+
                 fontWeight={fontWeight} fontSize={fontSize} backgroundColor={backgroundColor} hoverColor={hoverColor} maxWidth={maxWidth} minWidth={minWidth} minHeight={minHeight} border={border}
             >
                 {text}

@@ -6,4 +6,6 @@ export default {
     component: InputText,
 };
 
+
 export const BasicInputBox = () => <InputText placeholder="Email"/>;
+

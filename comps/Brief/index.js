@@ -8,7 +8,6 @@ const Container = styled.div`
     display: inline-flex;
     justify-content: left;
     align-items: left;
-    margin-left: ${props=>props.marL ? props.marL : ""}
 `;
 
 const IconImg = styled.img`
@@ -18,7 +17,6 @@ const IconImg = styled.img`
 `;
 
 const TextData = styled.p`
-    width: ${props=>props.width ? props.width : ""};
     min-height: 32px;
     font-style: normal;
     font-weight: 500;
@@ -27,29 +25,19 @@ const TextData = styled.p`
     color: #424242;
     margin: 5px 10px;
     text-align: left;
-    border: ${props=>props.focused ? "1px solid #424242" : ""};
-    box-sizing: border-box;
-    border-radius: 4px;
-    color: ${props=>props.TxtColor ? props.TxtColor : "#424242"}
 `;
 
-const Brief = ({src,text,width,image,marL,TxtColor}) => {
-    const [focused, setfocused] = useState(false)
-    return <Container onClick={()=> {
-        setfocused(true);
-    }} marL={marL}>
+const Brief = ({src,text,image}) => {
+    return <Container>
     {image === false ? null : <IconImg src={src}></IconImg>
-} <TextData focused={focused} width={width} TxtColor={TxtColor}>{text}</TextData>
+} <TextData>{text}</TextData>
 </Container>
 }
 
 Brief.defaultProps = {
-    width: "500px",
     src: "/briefcase.png",
     text: "Work at Web Development Company in Burnaby",
     image: false,
-    marL: "",
-    TxtColor:"#424242"
 }
 
 
