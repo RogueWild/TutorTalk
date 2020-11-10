@@ -2,8 +2,13 @@
     font-family: Montserrat;
 }
 
+@import './index.scss';
 @import './SignUpTutor.scss';
 @import './SignUpStudent.scss';
+@import './profilePage.scss';
+@import './profileEditPage.scss';
+@import './search.scss';
+@import './accountSettings.scss';
 @import './TutorSuccess.scss';
 @import './LoginFail.scss';
 @import './StudentSuccess.scss';
