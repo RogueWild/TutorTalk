@@ -4,7 +4,7 @@ import ErrorLottie from '../comps/Lotties/ErrorLottie';
 import StudentSuccessLottie from '../comps/Lotties/StudentSuccessLottie';
 
 export default {
-    title: 'Lotties/TutorSuccessLottie',
+    title: 'Lotties/Lotties',
     component: TutorSuccessLottie, ErrorLottie, StudentSuccessLottie
 };
 
