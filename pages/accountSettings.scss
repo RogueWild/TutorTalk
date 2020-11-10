@@ -1,0 +1,14 @@
+html, body {
+    margin:0;
+}
+
+.main {
+    background-color: white;
+    .Content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 100px;
+    }
+}
