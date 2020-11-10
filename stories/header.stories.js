@@ -8,4 +8,4 @@ export default {
 
 export const BasicAccountHeader = () => <HeaderAccount text="Don't Have an Account?" />;
 export const BasicSignupHeader = () => <HeaderAccount text="Sign up Today!" />;
-export const BasicLoginHeader = () => <HeaderAccount text="Login to TUTOR TALK"/> ;
+export const BasicLoginHeader = () => <HeaderAccount text="Login to " hideDisplay={true}/> ;
