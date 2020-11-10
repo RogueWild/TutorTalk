@@ -34,6 +34,7 @@ const LogoHeadBox = styled.div`
        min-height:40px;
        background-color:#FCCA36;
        border-radius:50%;
+       display:${props => props.profileDisplay ? props.profileDisplay : "block"};
            .profile-initial {
                 color:#FFF;
                 font-size:18pt;
@@ -53,9 +54,9 @@ const LogoHeadBox = styled.div`
 `;
 
 
-const LogoHeader = ({text}) => {
+const LogoHeader = ({text, profileDisplay}) => {
     return <div>
-        <LogoHeadBox>
+        <LogoHeadBox profileDisplay={profileDisplay}>
             <div className="logobox">
                 <img className="logo-icon" src="logo.svg"/>
                 <div className="apptitle">
@@ -72,7 +73,8 @@ const LogoHeader = ({text}) => {
 }
 
 LogoHeader.defaultProps = {
-    text:"U"
+    text:"U",
+    profileDisplay:"block"
 }
 
 export default LogoHeader;
