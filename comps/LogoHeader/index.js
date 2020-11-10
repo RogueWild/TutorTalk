@@ -66,6 +66,7 @@ const LogoHeadDropDown = styled.div`
 
 
 const LogoHeader = ({text, profileDisplay}) => {
+    const [expanded, setExpanded] = useState(true);
     return <div>
         <LogoHeadBox profileDisplay={profileDisplay}>
             <div className="logobox">
