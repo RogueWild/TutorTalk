@@ -6,11 +6,7 @@ ${props=>props.size === 0 && css`
 font-size: 16px;   `};
 ${props=>props.color === 0 && css`
 color:#000000;   `};
-border-style: solid;
-border-width: 1px;
-border-radius: 5px;
 padding: 10px;
-border-color: #424242;
 `;
 
 const AboutHeader = styled.div`

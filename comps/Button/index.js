@@ -29,7 +29,6 @@ const Cont = styled.div`
 
 const Button = ({ text, fontWeight, fontSize, backgroundColor, hoverColor, maxWidth, minWidth, minHeight, border, margin }) => {
 
-
     return <Cont>
         <motion.div
             whileTap={{ scale: 0.9 }}

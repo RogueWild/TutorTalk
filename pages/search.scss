@@ -1,0 +1,19 @@
+html, body {
+    margin:0;
+}
+.main {
+    background-color: white;
+    .Content {
+        display: flex;
+        margin-bottom: 200px;
+        .Left, .Right {
+            display:flex;
+        }
+        .Left {
+            margin-left: 70px;
+            .Summary {
+                margin-left: 50px;
+            }
+        }
+    }
+}

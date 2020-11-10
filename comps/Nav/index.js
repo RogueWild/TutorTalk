@@ -36,7 +36,7 @@ const NavBar = styled.div`
     min-height:3.5px;
     border-radius:15px;
     position:absolute;
-    top:64px;
+    top:118px;
     transition: left 0.2s, min-width 0.5s;
 
     @media (max-width:520px) {
