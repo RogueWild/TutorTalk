@@ -8,7 +8,14 @@ export default function TipsPage() {
     <div>
         <LogoHeader />
         <Nav />
+        <br></br>
         <div className="Tips">
+            <Tips />
+            <br></br>
+            <Tips />
+            <br></br>
+            <Tips />
+            <br></br>
             <Tips />
         </div>
     </div>
