@@ -9,6 +9,7 @@ const FileInputBox = styled.input`
     border-radius:7px;
     background: #FBFBFB;
     font-size: 18px;
+    cursor:pointer;
     ::-webkit-input-placeholder {
         color: #BDBDBD;
     }

@@ -30,6 +30,11 @@ const LogoHeadBox = styled.div`
     }
 
    .profile-icon {
+    
+        ${props=>props.displayIcon === false && css`
+        display:none !important;
+        `};
+
        cursor:pointer;
        min-width:40px;
        min-height:40px;
@@ -65,7 +70,7 @@ const LogoHeadDropDown = styled.div`
 `;
 
 
-const LogoHeader = ({text, profileDisplay}) => {
+const LogoHeader = ({text, profileDisplay, displayIcon}) => {
     const [expanded, setExpanded] = useState(true);
     return <div>
         <LogoHeadBox profileDisplay={profileDisplay}>
@@ -76,7 +81,7 @@ const LogoHeader = ({text, profileDisplay}) => {
                     <div><b>TALK</b></div>
                 </div>
             </div>
-            <div className="profile-icon" onClick={()=>{
+            <div className="profile-icon" displayIcon={displayIcon} onClick={()=>{
                 setExpanded(!expanded);
             }}>
                 <div className="profile-initial">{text}</div>
@@ -93,7 +98,8 @@ const LogoHeader = ({text, profileDisplay}) => {
 
 LogoHeader.defaultProps = {
     text:"U",
-    profileDisplay:"block"
+    profileDisplay:"block",
+    displayIcon:false
 }
 
 export default LogoHeader;

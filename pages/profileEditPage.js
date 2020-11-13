@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import LogoHeader from '../comps/LogoHeader';
 import Nav from '../comps/Nav';
-import ProfilePic from '../comps/ProfilePic';
+import ProfilePhoto from '../comps/ProfilePhoto';
 import ContactInput from '../comps/ContactInput';
 import SummaryInput from '../comps/SummaryInput';
 import AboutBox from '../comps/About';
@@ -14,7 +14,7 @@ export default function profilePage(){
         <Nav />
         <div className="profile-edit-content-box">
             <div className="profile-edit-left-side">
-                <ProfilePic />
+                <ProfilePhoto />
                 <div className="contact-input"><ContactInput /></div>
             </div>
             <div className="profile-edit-right-side">

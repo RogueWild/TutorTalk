@@ -10,7 +10,7 @@ export default function screeningPage(){
     return (
         <div className="screening-page-cont">
             <div className="screening-page-logohead">
-                <LogoHeader />
+                <LogoHeader displayIcon={false}/>
             </div>
             <div className="screening-page-header-box">
                 <div className="screening-page-header">

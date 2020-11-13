@@ -3,7 +3,7 @@ import styled, {css} from 'styled-components';
 
 const Container = styled.div`
     margin: 5px 0px;
-    width: 500px;
+    max-width:94%;
     min-height: 50px;
     display: inline-flex;
     justify-content: left;
