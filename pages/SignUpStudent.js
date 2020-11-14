@@ -4,9 +4,24 @@ import HeaderAccount from '../comps/Header';
 import Button from '../comps/Button';
 import SignUpForm from '../comps/SignUpForm';
 
+//import axios from 'axios';
+
 export default function SignUp() {
+
+    // const HandleSignUp = async () => {
+
+    //     //Communicate with the endpoint
+    //     var resp = await axios.get("link");
+
+    //     //Response comes back as an object from the server
+    //     console.log(resp.data);
+        
+    //     //{name:"..", email:... avatar...}
+    //     setImg(resp.data.message);
+    // }
+
     return (
-        <div className="main">
+        <div className="sign-up-student">
             <LogoHeader />
             <div className="contents">
                 <div className="login">
