@@ -6,7 +6,7 @@ import Button from '../comps/Button';
 
 export default function SignUp() {
     return (
-        <div className="main">
+        <div className="student-success">
             <LogoHeader profileDisplay="none" />
             <div className="inside">
                 <div className="lottie">

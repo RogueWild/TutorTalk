@@ -6,7 +6,7 @@ import Button from '../comps/Button';
 
 export default function SignUp() {
     return (
-        <div className="main">
+        <div className="tutor-success">
             <LogoHeader profileDisplay="none" />
             <div className="inside">
                 <AccountHeader text="Screening & Sign Up Complete" color="#3662FC" />

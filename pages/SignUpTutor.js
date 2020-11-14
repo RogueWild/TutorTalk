@@ -6,7 +6,7 @@ import SignUpForm from '../comps/SignUpForm';
 
 export default function SignUp() {
   return (
-    <div className="main">
+    <div className="sign-up-tutor">
       <LogoHeader />
       <div className="contents">
         <div className="login">
