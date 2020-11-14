@@ -27,14 +27,14 @@ const Cont = styled.div`
     min-height:${props => props.minHeight ? props.minHeight : "42px"};
 `;
 
-const Button = ({ text, fontWeight, fontSize, backgroundColor, hoverColor, maxWidth, minWidth, minHeight, border, margin }) => {
+const Button = ({ text, fontWeight, fontSize, backgroundColor, hoverColor, maxWidth, minWidth, minHeight, border, margin, onClick }) => {
 
     return <Cont>
         <motion.div
             whileTap={{ scale: 0.9 }}
         >
             <ButtonBox
-                fontWeight={fontWeight} fontSize={fontSize} backgroundColor={backgroundColor} hoverColor={hoverColor} maxWidth={maxWidth} minWidth={minWidth} minHeight={minHeight} border={border} margin={margin}
+                fontWeight={fontWeight} fontSize={fontSize} backgroundColor={backgroundColor} hoverColor={hoverColor} maxWidth={maxWidth} minWidth={minWidth} minHeight={minHeight} border={border} margin={margin} onClick={onClick}
             >
                 {text}
             </ButtonBox>
@@ -44,6 +44,7 @@ const Button = ({ text, fontWeight, fontSize, backgroundColor, hoverColor, maxWi
 
 Button.defaultProps = {
     text: "Text",
+    onClick:()=>{}
 }
 
 export default Button;
