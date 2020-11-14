@@ -81,11 +81,12 @@ const LogoHeader = ({text, profileDisplay, displayIcon}) => {
                     <div><b>TALK</b></div>
                 </div>
             </div>
+            {displayIcon? 
             <div className="profile-icon" displayIcon={displayIcon} onClick={()=>{
                 setExpanded(!expanded);
             }}>
                 <div className="profile-initial">{text}</div>
-            </div>
+            </div>:null}
         </LogoHeadBox>
         <LogoHeadDropDown expanded = {expanded}>
         <div className ="dropdown">

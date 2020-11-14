@@ -10,7 +10,7 @@ import Button from '../comps/Button';
 export default function profilePage(){
     return (
         <div>
-        <LogoHeader />
+        <LogoHeader displayIcon={true}/>
         <Nav />
         <div className="profile-edit-content-box">
             <div className="profile-edit-left-side">

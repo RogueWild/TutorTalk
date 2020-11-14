@@ -9,7 +9,7 @@ import AboutBox from '../comps/About';
 export default function profilePage(){
     return (
         <div>
-        <LogoHeader />
+        <LogoHeader displayIcon={true}/>
         <Nav />
         <div className="content-box">
             <div className="left-side">
