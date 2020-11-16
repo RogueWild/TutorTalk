@@ -9,16 +9,10 @@ import axios from 'axios';
 
 export default function SignUpStudent() {
 
-    const HandleSignUpStudent = async (email, pass, firstName, lastName, phone) => {
+    const HandleSignUpStudent = async () => {
 
         //Communicate with the endpoint
-        var resp = await axios.post("link", {
-            email: email,
-            password: pass,
-            firstName: firstName,
-            lastName: lastName,
-            phone: phone
-        });
+        var resp = await axios.post("http://localhost:8888/user/register/student");
 
         //Response comes back as an object from the server
         console.log(resp.data);
