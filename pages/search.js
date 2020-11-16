@@ -8,7 +8,7 @@ import Contact from '../comps/Contact';
 
 export default function Home() {
   return (
-    <div className="main">
+    <div className="search">
       <LogoHeader className="LogoHeader"></LogoHeader>
       <Nav className="Nav"></Nav>
       <SearchBar className="SearchBar" marginN="40px 0px 100px 50px"></SearchBar>
