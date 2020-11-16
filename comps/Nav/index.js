@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styled, { css } from 'styled-components';
 import { motion } from 'framer-motion';
+import {useRouter} from 'next/router';
 
 const NavBox = styled.div`
    display:flex;
@@ -19,10 +20,10 @@ const NavContent = styled.div`
 `;
 
 const NavBar = styled.div`
-    ${props=>props.position === 0 && css`
+    ${props=>props.position === "/profilePage" && css`
     left:28.8%;
     `};
-    ${props=>props.position === 1 && css`
+    ${props=>props.position === "/tips" && css`
     left:39.3%;
     `};
     ${props=>props.position === 2 && css`
@@ -61,9 +62,16 @@ export const FramerCont = ({text}) => {
 const Nav = ({}) => {
     const [position, setPosition] = useState(false);
 
-    useEffect(()=>{
-        setPosition(position);
-    }, [position])
+    const router = useRouter();
+    console.log(router);
+
+    useEffect(()=> {
+        setPosition(router.pathname)
+    },[router.pathname])
+
+    // useEffect(()=>{
+    //     setPosition(position);
+    // }, [position])
 
     return <NavBox>
             <NavContent>

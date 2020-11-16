@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import LogoHeader from '../comps/LogoHeader';
 import Nav from '../comps/Nav';
-import ProfilePic from '../comps/ProfilePic';
+import ProfilePhoto from '../comps/ProfilePhoto';
 import Summary from '../comps/Summary';
 import Contact from '../comps/Contact';
 import AboutBox from '../comps/About';
@@ -9,11 +9,11 @@ import AboutBox from '../comps/About';
 export default function profilePage(){
     return (
         <div>
-        <LogoHeader />
+        <LogoHeader displayIcon={true}/>
         <Nav />
         <div className="content-box">
             <div className="left-side">
-                <ProfilePic />
+                <ProfilePhoto profileimg={true} />
                 <div className="contact"><Contact /></div>
             </div>
             <div className="right-side">
