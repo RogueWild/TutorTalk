@@ -88,7 +88,7 @@ const LogoHeader = ({text, profileDisplay, displayIcon}) => {
                 <div className="profile-initial">{text}</div>
             </div>:null}
         </LogoHeadBox>
-        <LogoHeadDropDown expanded = {expanded}>
+        <LogoHeadDropDown>
         <div className ="dropdown">
                 <DropDown />
         </div>

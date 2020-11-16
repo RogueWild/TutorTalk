@@ -3,7 +3,7 @@ import styled, {css} from 'styled-components';
 
 const Container = styled.div`
     margin: 5px 0px;
-    max-width:94%;
+    width: ${props=>props.width ? props.width : ""};
     min-height: 50px;
     display: inline-flex;
     justify-content: left;
@@ -23,14 +23,14 @@ const TextData = styled.p`
     font-size: 20px;
     line-height: 24px;
     color: #424242;
-    margin: 5px 10px;
+    margin-left: ${props=>props.marL ? props.marL : ""};
     text-align: left;
 `;
 
-const Brief = ({src,text,image}) => {
-    return <Container>
+const Brief = ({src,text,image,width,marL}) => {
+    return <Container width={width}>
     {image === false ? null : <IconImg src={src}></IconImg>
-} <TextData>{text}</TextData>
+} <TextData marL = {marL}>{text}</TextData>
 </Container>
 }
 
@@ -38,6 +38,8 @@ Brief.defaultProps = {
     src: "/briefcase.png",
     text: "Work at Web Development Company in Burnaby",
     image: false,
+    width: "",
+    marL: ""
 }
 
 

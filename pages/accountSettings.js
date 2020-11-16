@@ -7,7 +7,7 @@ import Button from '../comps/Button';
 
 export default function Home() {
     return (
-        <div className="main">
+        <div className="accountSettings">
             <LogoHeader className="LogoHeader"></LogoHeader>
             <Nav className="Nav"></Nav>
             <div className="Content">
