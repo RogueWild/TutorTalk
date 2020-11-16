@@ -65,7 +65,7 @@ const LogoHeadDropDown = styled.div`
        left:86%;
        top:77px;
        max-width:150px;
-       display: ${props=>props.expanded ? "none" : "block"};
+       display: ${props=>props.expanded ? "block" : "none"};
    }
 `;
 
