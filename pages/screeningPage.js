@@ -44,7 +44,7 @@ export default function screeningPage(){
                     <FileInput/>
                 </div>
                 <div className="screening-page-submit">
-                    <Button text="Submit"/>
+                    <Link href="./TutorSuccess"><Button text="Submit"/></Link>
                 </div>
             </div>
         </div>

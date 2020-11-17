@@ -24,9 +24,9 @@ export default function profilePage(){
                 </div>
             </div>
         </div>
-        <div className="profile-edit-save-button">
-            <Button text={"Save Changes"}/>
-        </div>
+        <Link href="/profilePage"><div className="profile-edit-save-button">
+            <Button text={"Save Changes"} fontSize={"16px"}/>
+        </div></Link>
         </div>
     )
 }

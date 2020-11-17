@@ -100,7 +100,7 @@ const LogoHeader = ({text, profileDisplay, displayIcon}) => {
 LogoHeader.defaultProps = {
     text:"U",
     profileDisplay:"block",
-    displayIcon:false
+    displayIcon:true
 }
 
 export default LogoHeader;

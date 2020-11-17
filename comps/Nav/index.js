@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React, { useState, useEffect } from 'react';
 import styled, { css } from 'styled-components';
 import { motion } from 'framer-motion';
@@ -20,10 +21,10 @@ const NavContent = styled.div`
 `;
 
 const NavBar = styled.div`
-    ${props=>props.position === "/profilePage" && css`
+    ${props=>props.position === 0 && css`
     left:28.8%;
     `};
-    ${props=>props.position === "/tips" && css`
+    ${props=>props.position === 1 && css`
     left:39.3%;
     `};
     ${props=>props.position === 2 && css`
@@ -62,38 +63,38 @@ export const FramerCont = ({text}) => {
 const Nav = ({}) => {
     const [position, setPosition] = useState(false);
 
-    const router = useRouter();
-    console.log(router);
+    // const router = useRouter();
+    // console.log(router);
 
-    useEffect(()=> {
-        setPosition(router.pathname)
-    },[router.pathname])
+    // useEffect(()=> {
+    //     setPosition(router.pathname)
+    // },[router.pathname])
 
-    // useEffect(()=>{
-    //     setPosition(position);
-    // }, [position])
+    useEffect(()=>{
+        setPosition(position);
+    }, [position])
 
     return <NavBox>
             <NavContent>
-                <div onClick={()=>
+                <Link href="../profilePage"><div onClick={()=>
                     setPosition(0)}>
                     <FramerCont text="Profile"></FramerCont>
-                </div>
+                </div></Link>
 
                 <div onClick={()=>
                     setPosition(1)}>
                     <FramerCont text="Forum"></FramerCont>
                 </div>
 
-                <div onClick={()=>
+                <Link href="../tips"><div onClick={()=>
                     setPosition(2)}>
                     <FramerCont text="Tutor Tips"></FramerCont>
-                </div>
+                </div></Link>
 
-                <div onClick={()=>
+                <Link href="../search"><div onClick={()=>
                     setPosition(3)}>
                     <FramerCont text="Tutors"></FramerCont>
-                </div>
+                </div></Link>
 
                 <NavBar position={position}></NavBar>
             </NavContent>
