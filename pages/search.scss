@@ -3,13 +3,13 @@ html, body {
 }
 .search {
     background-color: white;
-    .Content {
+    .search_content {
         display: flex;
         margin-bottom: 200px;
-        .Left, .Right {
+        .search_left, .search_right {
             display:flex;
         }
-        .Left {
+        .search_left {
             margin-left: 70px;
             .Summary {
                 margin-left: 50px;
