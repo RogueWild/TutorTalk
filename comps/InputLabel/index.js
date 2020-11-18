@@ -14,9 +14,10 @@ min-height: 95px;
 const InputT = styled.p`
 font-style: normal;
 font-weight: 600;
-font-size: 25px;
+font-size: 23px;
 line-height: 30px;
-color: #000000;
+min-width:800px;
+color: #424242;
 margin: ${props => props.margin ? props.margin : ""};
 `;
 
