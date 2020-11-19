@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React, { useState, useEffect } from 'react';
 import styled, { css } from 'styled-components';
 import { motion } from 'framer-motion';
@@ -25,15 +26,15 @@ const DropDown = ({}) => {
     
     return <DropDownBox>
         <DropDownContent>
-            <div className="buttons">
-                <Button text="Edit Profile"/>
-            </div>
-            <div className="buttons">
-                <Button text="Edit Account"/>
-            </div>
-            <div className="buttons">
-                <Button text="Log Out" backgroundColor="#424242" hoverColor="#C4C4C4"/>
-            </div>
+            <Link href="../profileEditPage"><div className="buttons">
+                <Button text="Edit Profile" fontSize={"17px"}/>
+            </div></Link>
+            <Link href="../accountSettings"><div className="buttons">
+                <Button text="Edit Account" fontSize={"17px"}/>
+            </div></Link>
+            <Link href="../SignUpStudent"><div className="buttons">
+                <Button text="Log Out" backgroundColor="#424242" hoverColor="#C4C4C4" fontSize={"17px"}/>
+            </div></Link>
         </DropDownContent>
     </DropDownBox>
 }
