@@ -71,7 +71,7 @@ const LogoHeadDropDown = styled.div`
 
 
 const LogoHeader = ({text, profileDisplay, displayIcon}) => {
-    const [expanded, setExpanded] = useState(true);
+    const [expanded, setExpanded] = useState(false);
     return <div>
         <LogoHeadBox profileDisplay={profileDisplay}>
             <div className="logobox">
@@ -88,7 +88,7 @@ const LogoHeader = ({text, profileDisplay, displayIcon}) => {
                 <div className="profile-initial">{text}</div>
             </div>:null}
         </LogoHeadBox>
-        <LogoHeadDropDown>
+        <LogoHeadDropDown expanded={expanded}>
         <div className ="dropdown">
                 <DropDown />
         </div>
@@ -100,7 +100,7 @@ const LogoHeader = ({text, profileDisplay, displayIcon}) => {
 LogoHeader.defaultProps = {
     text:"U",
     profileDisplay:"block",
-    displayIcon:true
+    displayIcon:false
 }
 
 export default LogoHeader;
