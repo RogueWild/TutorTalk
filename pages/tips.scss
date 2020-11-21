@@ -1,4 +1,23 @@
-.Tips {
-    display: flex;
+.tips_main {
+    display:flex;
     flex-direction: column;
+
+    .tips_cont {
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin:40px 0 0 0;
+
+        .tips_header {
+            margin:5px 0 50px 0;
+        }
+        .tips_add_button {
+            margin:0 0 45px 0;
+        }
+        .tips_content {
+            width:60vw;
+            margin:5px 0 50px 0;
+        }
+    }
 }

@@ -6,17 +6,25 @@ import ContactInput from '../comps/ContactInput';
 import SummaryInput from '../comps/SummaryInput';
 import AboutBox from '../comps/About';
 import Button from '../comps/Button';
+import * as network from '../network';
+import React, { useState, useEffect } from 'react';
 
 import * as network from '../network';
 
 export default function profilePage() {
-    const HandleCreateProfile = async (picture, subject, job, diploma, availabilities, about) => {
-        let data = await network.registerStudent(picture, subject, job, diploma, availabilities, about);
+    const [picture, setPicture] = useState("");
+    const [subject, setSubject] = useState("");
+    const [job, setJob] = useState("");
+    const [diploma, setDiploma] = useState("");
+    const [availabilities, setAvailabilities] = useState("");
+    const [about, setAbout] = useState("");
+
+    const handleTutorProfile = async () => {
+        let data = await network.createTutorProfile(picture, subject, job, diploma, availabilities, about);
         console.log(data);
     }
-
     useEffect(() => {
-        HandleCreateProfile();
+        handleTutorProfile();
     }, [])
 
     return (
@@ -25,19 +33,29 @@ export default function profilePage() {
             <Nav />
             <div className="profile-edit-content-box">
                 <div className="profile-edit-left-side">
-                    <ProfilePhoto />
-                    <div className="contact-input"><ContactInput /></div>
+                    <ProfilePhoto onChange={(e) => {
+                        setPicture(e.target.value)
+                    }} />
+                    <div className="contact-input"><ContactInput onChange={(e) => {
+                        setAvailabilities(e.target.value)
+                    }} /></div>
                 </div>
                 <div className="profile-edit-right-side">
-                    <SummaryInput />
+                    <SummaryInput onChange={(e) => {
+                        setSubject(e.target.value),
+                            setJob(e.target.value),
+                            setDiploma(e.target.value)
+                    }} />
                     <div className="profile-edit-about-input">
-                        <AboutBox color={0} text2={"About"} text={"I’m a Computer Science student at BCIT, and I’m passionate about helping others learn while I learn! I have a good understanding of interdisciplinary computer programming. Ask me anything and I’ll try to help you out. Email me or give me a call and leave a voice mail. I like to teach through Zoom; once you reach out and we seem like a good student/ tutor fit, I will set up a meeting for us on Zoom."} size={0} />
+                        <AboutBox color={0} text2={"About"} text={"Dummy text"} size={0} onChange={(e) => {
+                            setAbout(e.target.value)
+                        }} />
                     </div>
                 </div>
             </div>
-            <div className="profile-edit-save-button">
-                <Button text={"Save Changes"} />
-            </div>
+            <Link href="/profilePage"><div className="profile-edit-save-button">
+                <Button text={"Save Changes"} fontSize="16px" onClick={handleTutorProfile} />
+            </div></Link>
         </div>
     )
 }

@@ -1,13 +1,17 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import LogoHeader from '../comps/LogoHeader';
 import Nav from '../comps/Nav';
 import SearchBar from '../comps/SearchBar';
 import ProfilePic from '../comps/ProfilePic';
+import ProfilePhoto from '../comps/ProfilePhoto';
 import Summary from '../comps/Summary';
 import Contact from '../comps/Contact';
 import * as network from '../network';
+import Link from 'next/link';
 
 export default function Search() {
+  const [subject, setSubject] = useState("");
+
   const handleSearch = async () => {
     // look here!! pls name the inputs for useState as these values in the argument
     // the error will be gone til you add them
@@ -26,11 +30,12 @@ export default function Search() {
 
       <div className="search_content">
         <div className="search_left">
+          <Link href="/profilePage">
           <div className="ProfilePic">
-            <ProfilePic></ProfilePic>
-          </div>
+            <ProfilePhoto profileimg={true} choosefile={false}/>
+          </div></Link>
           <div className="Summary">
-            <Summary></Summary>
+            <Summary />
           </div>
         </div>
         <div className="search_right">
@@ -40,11 +45,12 @@ export default function Search() {
 
       <div className="search_content">
         <div className="search_left">
+          <Link href="/profilePage">
           <div className="ProfilePic">
-            <ProfilePic></ProfilePic>
-          </div>
+          <ProfilePhoto profileimg={true} choosefile={false}/>
+          </div></ Link>
           <div className="Summary">
-            <Summary></Summary>
+            <Summary />
           </div>
         </div>
         <div className="search_right">
@@ -54,11 +60,12 @@ export default function Search() {
 
       <div className="search_content">
         <div className="search_left">
+          <Link href="/profilePage">
           <div className="ProfilePic">
-            <ProfilePic></ProfilePic>
-          </div>
+          <ProfilePhoto profileimg={true} choosefile={false}/>
+          </div></Link>
           <div className="Summary">
-            <Summary></Summary>
+            <Summary />
           </div>
         </div>
         <div className="search_right">

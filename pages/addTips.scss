@@ -1,0 +1,16 @@
+.addtips_cont {
+    .addtips_section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 100px;
+
+    .addtips_header {
+        margin-bottom:50px;
+    }
+    .addtips_save {
+        margin-top:40px;
+    }
+    }
+}
