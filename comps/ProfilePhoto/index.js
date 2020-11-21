@@ -7,7 +7,7 @@ const ProfilePhotoCont = styled.div`
     ${props=> props.choosefile === false && css`
     background-color:#FFF;
     `};
-    max-width:371px;
+    width:371px;
     min-height:433px;
     background-color:#424242;
     align-items:center;

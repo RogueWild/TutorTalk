@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React, { useState, useEffect } from 'react';
 import styled, { css } from 'styled-components';
 import { motion } from 'framer-motion';
@@ -23,13 +24,13 @@ const NavBar = styled.div`
     ${props=>props.position === "/profilePage" && css`
     left:28.8%;
     `};
-    ${props=>props.position === "/tips" && css`
+    ${props=>props.position === 0 && css`
     left:39.3%;
     `};
-    ${props=>props.position === 2 && css`
+    ${props=>props.position === "/tips" && css`
     left:50.8%;
     `};
-    ${props=>props.position === 3 && css`
+    ${props=>props.position === "/search" && css`
     left:62.5%;
     `};
     background-color:#424242;
@@ -75,25 +76,25 @@ const Nav = ({}) => {
 
     return <NavBox>
             <NavContent>
-                <div onClick={()=>
-                    setPosition(0)}>
+                <Link href="../profilePage"><div onClick={()=>
+                    setPosition()}>
                     <FramerCont text="Profile"></FramerCont>
-                </div>
+                </div></Link>
 
                 <div onClick={()=>
-                    setPosition(1)}>
+                    setPosition(0)}>
                     <FramerCont text="Forum"></FramerCont>
                 </div>
 
-                <div onClick={()=>
+                <Link href="../tips"><div onClick={()=>
                     setPosition(2)}>
                     <FramerCont text="Tutor Tips"></FramerCont>
-                </div>
+                </div></Link>
 
-                <div onClick={()=>
-                    setPosition(3)}>
+                <Link href="../search"><div onClick={()=>
+                    setPosition()}>
                     <FramerCont text="Tutors"></FramerCont>
-                </div>
+                </div></Link>
 
                 <NavBar position={position}></NavBar>
             </NavContent>

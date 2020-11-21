@@ -12,7 +12,7 @@ export default function Home() {
             <Nav className="Nav"></Nav>
             <div className="settings_content">
                 <Settings className="Settings" margin="0px 0px 30px 0px"></Settings>
-                <Button text="Save Changes" minWidth="286px"></Button>
+                <Button text="Save Changes" fontSize="16px" minWidth="286px"></Button>
             </div>
         </div>
     )

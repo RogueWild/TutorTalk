@@ -8,6 +8,9 @@ html, body {
         margin-bottom: 200px;
         .search_left, .search_right {
             display:flex;
+            .ProfilePic {
+                cursor:pointer;
+            }
         }
         .search_left {
             margin-left: 70px;
