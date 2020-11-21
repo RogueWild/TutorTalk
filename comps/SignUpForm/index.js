@@ -34,7 +34,7 @@ const ButtonContTutor = styled.div`
 const SignUpForm = ({ onClick, displayStudentButton, displayTutorButton }) => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const [confirmPassword, setconfirmPassword] = useState("");
+    // const [confirmPassword, setconfirmPassword] = useState("");
     const [firstname, setFirstName] = useState("");
     const [lastname, setLastName] = useState("");
     const [phonenumber, setPhone] = useState("");
@@ -47,9 +47,9 @@ const SignUpForm = ({ onClick, displayStudentButton, displayTutorButton }) => {
         <Input placeholder="Password" margin="0px 0px 20px 0px" onChange={(e) => {
             setPassword(e.target.value)
         }} />
-        <Input placeholder="Confirm Password" margin="0px 0px 20px 0px" onChange={(e) => {
+        {/* <Input placeholder="Confirm Password" margin="0px 0px 20px 0px" onChange={(e) => {
             setconfirmPassword(e.target.value)
-        }} />
+        }} /> */}
         <Cont>
             <Input placeholder="First Name" width="40%" margin="0px 0px 20px 0px" onChange={(e) => {
                 setFirstName(e.target.value)
@@ -63,29 +63,39 @@ const SignUpForm = ({ onClick, displayStudentButton, displayTutorButton }) => {
         }} />
         <ButtonContStudent displayStudentButton={displayStudentButton}>
             <Button onClick={() => {
-                if (confirmPassword == password) {
-                    onClick(email);
-                    onClick(password);
-                    onClick(firstname);
-                    onClick(lastname);
-                    onClick(phonenumber);
-                } else {
-                    alert("Password Does Not Match!")
-                }
+                // if (confirmPassword == password) {
+                //     onClick(email);
+                //     onClick(password);
+                //     onClick(firstname);
+                //     onClick(lastname);
+                //     onClick(phonenumber);
+                // } else {
+                //     alert("Password Does Not Match!")
+                // }
+                onClick(email);
+                onClick(password);
+                onClick(firstname);
+                onClick(lastname);
+                onClick(phonenumber);
             }}
                 text="Sign Up" />
         </ButtonContStudent>
         <ButtonContTutor displayTutorButton={displayTutorButton}>
             <Button onClick={() => {
-                if (confirmPassword == password) {
-                    onClick(email);
-                    onClick(password);
-                    onClick(firstname);
-                    onClick(lastname);
-                    onClick(phonenumber);
-                } else {
-                    alert("Password Does Not Match!")
-                }
+                // if (confirmPassword == password) {
+                //     onClick(email);
+                //     onClick(password);
+                //     onClick(firstname);
+                //     onClick(lastname);
+                //     onClick(phonenumber);
+                // } else {
+                //     alert("Password Does Not Match!")
+                // }
+                onClick(email);
+                onClick(password);
+                onClick(firstname);
+                onClick(lastname);
+                onClick(phonenumber);
             }}
                 text="Sign Up" />
         </ButtonContTutor>

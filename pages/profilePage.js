@@ -7,20 +7,21 @@ import Summary from '../comps/Summary';
 import Contact from '../comps/Contact';
 import AboutBox from '../comps/About';
 
+import * as network from '../network';
+
 export default function profilePage() {
 
     // Henry's example
-    // const [about, setAbout] = useState("");
+    // const [about, setAbout] = useState("")
+    const HandleProfile = async () => {
+        var resp = await network.viewTutorProfile;
+        // below line is henry's example
+        setAbout(resp.data.about)
+    }
 
-
-    // const HandleProfile = async () => {
-    //     var resp = await stuff//axios get profile request
-    //     setAbout(resp.data.about)
-    // }
-
-    // useEffect(() => {
-    //     HandleProfile();
-    // }, [])
+    useEffect(() => {
+        HandleProfile();
+    }, [])
 
     return (
         <div>

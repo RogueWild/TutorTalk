@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import LogoHeader from '../comps/LogoHeader';
 import HeaderAccount from '../comps/Header';
 import Button from '../comps/Button';
@@ -9,11 +9,10 @@ import * as network from '../network';
 
 export default function SignUpTutor(email, password, firstname, lastname, phonenumber) {
   const HandleSignUpTutor = async () => {
-    // look here!! pls name the inputs for useState as these values in the argument
-    // the error will be gone til you add them
     let data = await network.registerTutor(email, password, firstname, lastname, phonenumber);
     console.log(data);
   }
+
   useEffect(() => {
     HandleSignUpTutor();
   }, [])

@@ -29,8 +29,7 @@ export function login(email, password) {
         })
 }
 
-// profile (how to get req.user id for this????? do i need this for argu????
-// test this part later?!?!)
+// profile
 // no frontend page for this!!!!!
 export function createStudentProfile(picture, program, helps, about) {
     return axios.post('https://tutor-talk.herokuapp.com/profile/student/create', { picture, program, helps, about })
@@ -54,15 +53,15 @@ export function createTutorProfile(picture, subject, job, diploma, availabilitie
 }
 
 export function viewTutorProfile() {
-    return axios.get('https://tutor-talk.herokuapp.com/profile/tutor', {})
+    return axios.get('https://tutor-talk.herokuapp.com/profile/tutor')
         .then(data => {
             return data.data;
         })
 }
 
 // param for this???
-export function checkStudentProfile() {
-    return axios.get('https://tutor-talk.herokuapp.com/profile/view/:id', {})
+export function checkTutorProfile() {
+    return axios.get('https://tutor-talk.herokuapp.com/profile/view/:id')
         .then(data => {
             return data.data;
         })
