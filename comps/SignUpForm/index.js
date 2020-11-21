@@ -18,7 +18,8 @@ const Cont = styled.div`
 `;
 
 const SignUpForm = ({ onClick }) => {
-    const [email, setEmail] = useState("")
+    const [email, setEmail] = useState("");
+
     return <SignUpFormBox>
         <HeaderAccount text="Create your account" fontSize="34px" margin="0px 0px 20px 0px" />
         <Input placeholder="Email" margin="0px 0px 20px 0px" onChange={(e) => {

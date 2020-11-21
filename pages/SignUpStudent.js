@@ -1,23 +1,23 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import LogoHeader from '../comps/LogoHeader';
 import HeaderAccount from '../comps/Header';
 import Button from '../comps/Button';
 import SignUpForm from '../comps/SignUpForm';
 
-import Link from 'next/link'
-import axios from 'axios';
+import Link from 'next/link';
+import * as network from '../network';
 
 export default function SignUpStudent() {
 
-    const HandleSignUpStudent = async () => {
-
-        //Communicate with the endpoint
-        var resp = await axios.post("http://localhost:8888/user/register/student");
-
-        //Response comes back as an object from the server
-        console.log(resp.data);
-
-    }
+    // const HandleSignUpStudent = async () => {
+    //     // look here!! pls name the inputs for useState as these values in the argument
+    //     // the error will be gone til you add them
+    //     let data = await network.registerStudent(email, password, firstname, lastname, phonenumber);
+    //     console.log(data);
+    // }
+    // useEffect(() => {
+    //     HandleSignUpStudent();
+    // }, [])
 
     return (
         <div className="sign-up-student">
@@ -33,7 +33,7 @@ export default function SignUpStudent() {
                 <div className="signUp">
                     <SignUpForm />
                     <div className="buttons">
-                        <Button text="Sign Up" onClick={HandleSignUpStudent} />
+                        <Button text="Sign Up" />
                     </div>
                 </div>
             </div>

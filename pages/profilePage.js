@@ -9,20 +9,23 @@ import { useEffect } from 'react';
 
 export default function profilePage() {
 
-    const [about, setAbout] = useState("");
+    // Henry's example
+    // const [about, setAbout] = useState("");
 
 
-    const HandleProfile = async () => {
-        var resp = await stuff//axios get profile request
-        setAbout(resp.data.about)
-    }
+    // const HandleProfile = async () => {
+    //     var resp = await stuff//axios get profile request
+    //     setAbout(resp.data.about)
+    // }
 
-    useEffect(() => {
-        HandleProfile();
-    }, [])
+    // useEffect(() => {
+    //     HandleProfile();
+    // }, [])
+
     return (
         <div>
-            <LogoHeader displayIcon={true} onClick={HandleProfile} />
+            {/* onClick={HandleProfile} */}
+            <LogoHeader displayIcon={true} />
             <Nav />
             <div className="content-box">
                 <div className="left-side">
@@ -32,7 +35,8 @@ export default function profilePage() {
                 <div className="right-side">
                     <Summary />
                     <div className="about-box">
-                        <AboutBox color={0} text2={"About"} text={about} size={0} />
+                        {/* text={about} */}
+                        <AboutBox color={0} text2={"About"} text={"some dummy data"} size={0} />
                     </div>
                 </div>
             </div>

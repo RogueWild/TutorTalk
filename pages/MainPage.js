@@ -4,20 +4,19 @@ import HeaderAccount from '../comps/Header';
 import Button from '../comps/Button';
 import Input from '../comps/Input';
 
-import Link from 'next/link'
-import axios from 'axios';
+import Link from 'next/link';
+import * as network from '../network';
 
-export default function SignUpStudent() {
-
-    const HandleLogin = async () => {
-
-        //Communicate with the endpoint
-        var resp = await axios.post("http://localhost:8888/user/register/student");
-
-        //Response comes back as an object from the server
-        console.log(resp.data);
-
+export default function mainPage() {
+    const handleLogin = async () => {
+        // look here!! pls name the inputs for useState as these values in the argument
+        // the error will be gone til you add them
+        let data = await network.login(email, password);
+        console.log(data);
     }
+    useEffect(() => {
+        handleLogin();
+    }, [])
 
     return (
         <div className="main-page">

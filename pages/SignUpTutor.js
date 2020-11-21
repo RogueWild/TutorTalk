@@ -5,25 +5,18 @@ import Button from '../comps/Button';
 import SignUpForm from '../comps/SignUpForm';
 
 import Link from 'next/link'
-import axios from 'axios';
+import * as network from '../network';
 
 export default function SignUpTutor() {
-
-  const HandleSignUpTutor = async (email, pass, firstName, lastName, phonenumber) => {
-
-    //Communicate with the endpoint
-    var resp = await axios.post("link", {
-      email: email,
-      password: pass,
-      firstName: firstName,
-      lastName: lastName,
-      phone: phone
-    });
-
-    //Response comes back as an object from the server
-    console.log(resp.data);
-
-  }
+  // const HandleSignUpTutor = async () => {
+  //   // look here!! pls name the inputs for useState as these values in the argument
+  //   // the error will be gone til you add them
+  //   let data = await network.registerTutor(email, password, firstname, lastname, phonenumber);
+  //   console.log(data);
+  // }
+  // useEffect(() => {
+  //   HandleSignUpTutor();
+  // }, [])
 
   return (
     <div className="sign-up-tutor">
@@ -40,7 +33,8 @@ export default function SignUpTutor() {
           <SignUpForm onClick={HandleSignUpTutor} />
           <div className="buttons">
             <Button text="Peer Tutor" onClick={HandleSignUpTutor} />
-            <Button text="Certified Tutor" fontSize="16px" onClick={HandleSignUpTutor} />
+            {/* still need this? delete it if only one type of tutor */}
+            {/* <Button text="Certified Tutor" fontSize="16px" onClick={HandleSignUpTutor} /> */}
           </div>
         </div>
       </div>
