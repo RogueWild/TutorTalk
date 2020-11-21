@@ -9,7 +9,7 @@ import axios from 'axios';
 
 export default function SignUpTutor() {
 
-  const HandleSignUpTutor = async (email, pass, firstName, lastName, phone) => {
+  const HandleSignUpTutor = async (email, pass, firstName, lastName, phonenumber) => {
 
     //Communicate with the endpoint
     var resp = await axios.post("link", {
@@ -37,7 +37,7 @@ export default function SignUpTutor() {
           </Link>
         </div>
         <div className="signUp">
-          <SignUpForm />
+          <SignUpForm onClick={HandleSignUpTutor} />
           <div className="buttons">
             <Button text="Peer Tutor" onClick={HandleSignUpTutor} />
             <Button text="Certified Tutor" fontSize="16px" onClick={HandleSignUpTutor} />

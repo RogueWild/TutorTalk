@@ -17,11 +17,13 @@ const Cont = styled.div`
     justify-content:space-between;
 `;
 
-const SignUpForm = ({ }) => {
-
+const SignUpForm = ({ onClick }) => {
+    const [email, setEmail] = useState("")
     return <SignUpFormBox>
         <HeaderAccount text="Create your account" fontSize="34px" margin="0px 0px 20px 0px" />
-        <Input placeholder="Email" margin="0px 0px 20px 0px" />
+        <Input placeholder="Email" margin="0px 0px 20px 0px" onChange={(e) => {
+            setEmail(e.target.value)
+        }} />
         <Input placeholder="Password" margin="0px 0px 20px 0px" />
         <Input placeholder="Confirm Password" margin="0px 0px 20px 0px" />
         <Cont>
@@ -29,12 +31,15 @@ const SignUpForm = ({ }) => {
             <Input placeholder="Last Name" width="40%" margin="0px 0px 20px 0px" />
         </Cont>
         <Input placeholder="Phone" margin="0px 0px 20px 0px" />
+        <button onClick={() => {
+            onClick(email)
+        }}>Submit</button>
     </SignUpFormBox>
 
 }
 
 SignUpForm.defaultProps = {
-
+    onClick: () => { }
 }
 
 export default SignUpForm;
