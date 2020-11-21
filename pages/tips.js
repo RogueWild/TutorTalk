@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import LogoHeader from '../comps/LogoHeader';
 import Nav from '../comps/Nav';
 import Tips from '../comps/Tips';

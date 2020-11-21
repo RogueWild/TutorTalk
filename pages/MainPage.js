@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import LogoHeader from '../comps/LogoHeader';
 import HeaderAccount from '../comps/Header';
 import Button from '../comps/Button';
@@ -8,6 +8,9 @@ import Link from 'next/link';
 import * as network from '../network';
 
 export default function mainPage() {
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+
     const handleLogin = async () => {
         // look here!! pls name the inputs for useState as these values in the argument
         // the error will be gone til you add them
@@ -28,12 +31,16 @@ export default function mainPage() {
                 <div className="login">
                     <div className="header">
                         <HeaderAccount text="Log in to" color="#676767" fontSize="32px" margin="0px 10px 40px 0px" />
-                        <HeaderAccount text="TUTOR TALK" color="#FFBF00" fontSize="32px" />
+                        <HeaderAccount text="TUTOR TALK" color="#FFBF00" fontSize="32px" margin="0px 10px 40px 0px" />
                     </div>
-                    <Input placeholder="Email" width="50%" />
-                    <Input placeholder="Password" width="50%" margin="10px 0px 0px 0px" />
+                    <Input placeholder="Email" width="50%" onChange={(e) => {
+                        setEmail(e.target.value)
+                    }} />
+                    <Input placeholder="Password" width="50%" margin="10px 0px 0px 0px" onChange={(e) => {
+                        setPassword(e.target.value)
+                    }} />
                     <div className="buttons">
-                        <Button text="Log in" margin="40px 0px 0px 0px" onClick={HandleLogin} />
+                        <Button text="Log in" margin="40px 0px 0px 0px" onClick={handleLogin} />
                     </div>
                 </div>
 

@@ -9,15 +9,15 @@ import * as network from '../network';
 
 export default function SignUpStudent() {
 
-    // const HandleSignUpStudent = async () => {
-    //     // look here!! pls name the inputs for useState as these values in the argument
-    //     // the error will be gone til you add them
-    //     let data = await network.registerStudent(email, password, firstname, lastname, phonenumber);
-    //     console.log(data);
-    // }
-    // useEffect(() => {
-    //     HandleSignUpStudent();
-    // }, [])
+    const HandleSignUpStudent = async (email, password, firstname, lastname, phonenumber) => {
+        // look here!! pls name the inputs for useState as these values in the argument
+        // the error will be gone til you add them
+        let data = await network.registerStudent(email, password, firstname, lastname, phonenumber);
+        console.log(data);
+    }
+    useEffect(() => {
+        HandleSignUpStudent();
+    }, [])
 
     return (
         <div className="sign-up-student">
@@ -31,10 +31,7 @@ export default function SignUpStudent() {
                     </Link>
                 </div>
                 <div className="signUp">
-                    <SignUpForm />
-                    <div className="buttons">
-                        <Button text="Sign Up" />
-                    </div>
+                    <SignUpForm onClick={HandleSignUpStudent} displayStudentButton="flex" />
                 </div>
             </div>
             <div className="footer">

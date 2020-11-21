@@ -1,3 +1,4 @@
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import LogoHeader from '../comps/LogoHeader';
 import Nav from '../comps/Nav';
@@ -5,7 +6,6 @@ import ProfilePhoto from '../comps/ProfilePhoto';
 import Summary from '../comps/Summary';
 import Contact from '../comps/Contact';
 import AboutBox from '../comps/About';
-import { useEffect } from 'react';
 
 export default function profilePage() {
 
