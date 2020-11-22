@@ -49,7 +49,7 @@ export default function profilePage() {
                     <div className="profile-edit-about-input">
                         <AboutBox color={0} text2={"About"} text={"Dummy text"} size={0} onChange={(e) => {
                             setAbout(e.target.value)
-                        }} />
+                        }} input={true}/>
                     </div>
                 </div>
             </div>
