@@ -45,11 +45,11 @@ export default function profilePage() {
                         setSubject(e.target.value),
                             setJob(e.target.value),
                             setDiploma(e.target.value)
-                    }} />
+                    }} story={false}/>
                     <div className="profile-edit-about-input">
                         <AboutBox color={0} text2={"About"} text={"Dummy text"} size={0} onChange={(e) => {
                             setAbout(e.target.value)
-                        }} />
+                        }} input={true}/>
                     </div>
                 </div>
             </div>

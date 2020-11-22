@@ -39,18 +39,19 @@ const ProfilePhotoImg = styled.img`
 `;
 
 
-const ProfilePhoto = ({profileimg, choosefile}) => {
+const ProfilePhoto = ({profileimg, choosefile, src}) => {
     return <ProfilePhotoCont choosefile={choosefile}>
         <ProfilePhotoSelect>
         </ProfilePhotoSelect>
-        <ProfilePhotoImg src="profilepic.jpg" profileimg={profileimg}/>
+        <ProfilePhotoImg src={src} profileimg={profileimg}/>
     </ProfilePhotoCont>
 }
 
 
 ProfilePhoto.defaultProps = {
     profileimg:false,
-    choosefile:true
+    choosefile:true,
+    src: "profilepic.jpg"
 }
 
 export default ProfilePhoto;

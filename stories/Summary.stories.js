@@ -7,3 +7,4 @@ export default {
 };
 
 export const BasicSummary = () => <Summary image={true} />;
+export const SummaryWithoutStory = () => <Summary image={true} story={false}/>;
