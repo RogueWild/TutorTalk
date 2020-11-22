@@ -4,6 +4,8 @@ import HeaderAccount from '../comps/Header';
 import Button from '../comps/Button';
 import Input from '../comps/Input';
 
+import { Router, useRouter } from 'next/router'
+
 import Link from 'next/link';
 import * as network from '../network';
 
@@ -11,15 +13,16 @@ export default function mainPage() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
+    const router = useRouter();
+
     const handleLogin = async () => {
         // look here!! pls name the inputs for useState as these values in the argument
         // the error will be gone til you add them
         let data = await network.login(email, password);
         console.log(data);
+
+        router.push('/StudentProfileEdit');
     }
-    useEffect(() => {
-        handleLogin();
-    }, [])
 
     return (
         <div className="main-page">

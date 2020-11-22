@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import LogoHeader from '../comps/LogoHeader';
 import HeaderAccount from '../comps/Header';
 import Button from '../comps/Button';
-import SignUpForm from '../comps/SignUpForm';
+import TutorSignUpForm from '../comps/TutorSignUpForm';
 
 import Link from 'next/link'
 import * as network from '../network';
@@ -29,7 +29,7 @@ export default function SignUpTutor(email, password, firstname, lastname, phonen
           </Link>
         </div>
         <div className="signUp">
-          <SignUpForm displayTutorButton="flex" onClick={HandleSignUpTutor} />
+          <TutorSignUpForm onClick={HandleSignUpTutor} />
         </div>
       </div>
       <div className="footer">
