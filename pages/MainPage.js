@@ -16,16 +16,17 @@ export default function mainPage() {
     const router = useRouter();
 
     const handleLogin = async () => {
-        // look here!! pls name the inputs for useState as these values in the argument
-        // the error will be gone til you add them
         let data = await network.login(email, password);
         console.log(data);
-        if(data.userToken) {
-            router.push('/StudentProfile');
-        } else if (email || password == null) {
-            alert("Empty");
+
+        if (!email || !password) {
+            alert("Please make sure to fill email and password");
         } else {
-            alert("Incorrect Email or Password!");
+            if (data.userToken) {
+                router.push("/StudentProfile");
+            } else {
+                alert("Incorrect email or password");
+            }
         }
     }
 
@@ -43,7 +44,7 @@ export default function mainPage() {
                     </div>
                     <Input placeholder="Email" width="50%" onChange={(e) => {
                         setEmail(e.target.value)
-                    }} /> 
+                    }} />
                     <Input placeholder="Password" width="50%" margin="10px 0px 0px 0px" onChange={(e) => {
                         setPassword(e.target.value)
                     }} />
