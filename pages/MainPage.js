@@ -22,6 +22,8 @@ export default function mainPage() {
         console.log(data);
         if(data.userToken) {
             router.push('/StudentProfile');
+        } else if (email || password == null) {
+            alert("Empty");
         } else {
             alert("Incorrect Email or Password!");
         }
@@ -41,7 +43,7 @@ export default function mainPage() {
                     </div>
                     <Input placeholder="Email" width="50%" onChange={(e) => {
                         setEmail(e.target.value)
-                    }} />
+                    }} /> 
                     <Input placeholder="Password" width="50%" margin="10px 0px 0px 0px" onChange={(e) => {
                         setPassword(e.target.value)
                     }} />

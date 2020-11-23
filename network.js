@@ -16,7 +16,7 @@ export function registerTutor(email, password, firstname, lastname, phonenumber)
 }
 
 export function logout() {
-    return axios.get('/user/logout')
+    return axios.get('https://tutor-talk.herokuapp.com/logout', {})
         .then(data => {
             return data.data;
         })

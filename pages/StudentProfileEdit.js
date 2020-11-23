@@ -21,15 +21,15 @@ export default function profilePage() {
 
     const router = useRouter();
 
-    const handleTutorProfile = async () => {
-        let data = await network.createTutorProfile(picture, subject, job, diploma, availabilities, about);
+    const handleStudentProfile = async () => {
+        let data = await network.createStudentProfile(picture, subject, job, diploma, availabilities, about);
         console.log(data);
 
         router.push('/StudentProfile');
     }
-    // useEffect(() => {
-    //     handleTutorProfile();
-    // }, [])
+    useEffect(() => {
+        handleStudentProfile();
+    }, [])
 
     return (
         <div>
@@ -58,7 +58,7 @@ export default function profilePage() {
                 </div>
             </div>
             <div className="profile-edit-save-button">
-                <Button text={"Save Changes"} fontSize="16px" onClick={handleTutorProfile} />
+                <Button text={"Save Changes"} fontSize="16px" onClick={handleStudentProfile} />
             </div>
         </div>
     )

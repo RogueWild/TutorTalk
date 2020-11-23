@@ -37,6 +37,7 @@ const DropDown = ({ }) => {
     }
     const handleLogout = async () => {
         let data = await network.logout();
+        console.log(data);
         router.push('../');
     }
 
@@ -48,9 +49,9 @@ const DropDown = ({ }) => {
             <div className="buttons">
                 <Button text="Edit Account" fontSize={"17px"} onClick={handleEditAccount} />
             </div>
-            <Link href="../"><div className="buttons">
+            <div className="buttons">
                 <Button text="Log Out" backgroundColor="#424242" hoverColor="#C4C4C4" fontSize={"17px"} onClick={handleLogout} />
-            </div></Link>
+            </div>
         </DropDownContent>
     </DropDownBox>
 }
