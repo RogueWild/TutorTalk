@@ -22,7 +22,7 @@ const NavContent = styled.div`
 `;
 
 const NavBar = styled.div`
-    ${props=>props.position === "/profilePage" && css`
+    ${props=>props.position === 0 && css`
     left:28.8%;
     `};
     ${props=>props.position === 0 && css`
@@ -80,20 +80,21 @@ const Nav = ({}) => {
         router.push('/search');
     }
 
-    useEffect(()=> {
-        setPosition(router.pathname)
-    },[router.pathname])
 
-    // useEffect(()=>{
-    //     setPosition(position);
-    // }, [position])
+    // useEffect(()=> {
+    //     setPosition(router.pathname)
+    // },[router.pathname])
+
+    useEffect(()=>{
+        setPosition(position);
+    }, [position])
 
     return <NavBox>
             <NavContent>
                 <div onClick={()=>
                     setPosition(), handleProfile}>
                     <FramerCont text="Profile"></FramerCont>
-                </div>
+                </div></Link>
 
                 <div onClick={()=>
                     setPosition(0)}>
@@ -103,12 +104,12 @@ const Nav = ({}) => {
                 <div onClick={()=>
                     setPosition(2), handleTutorTips}>
                     <FramerCont text="Tutor Tips"></FramerCont>
-                </div>
+                </div></Link>
 
                 <div onClick={()=>
                     setPosition(), handleTutors}>
                     <FramerCont text="Tutors"></FramerCont>
-                </div>
+                </div></Link>
 
                 <NavBar position={position}></NavBar>
             </NavContent>
