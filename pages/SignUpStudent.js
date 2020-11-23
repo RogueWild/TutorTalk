@@ -4,18 +4,23 @@ import HeaderAccount from '../comps/Header';
 import Button from '../comps/Button';
 import StudentSignUpForm from '../comps/StudentSignUpForm';
 
+import { Router, useRouter } from 'next/router'
+
 import Link from 'next/link';
 import * as network from '../network';
 
 export default function SignUpStudent() {
+    const router = useRouter();
+
     const HandleSignUpStudent = async (email, password, firstname, lastname, phonenumber) => {
         let data = await network.registerStudent(email, password, firstname, lastname, phonenumber);
         console.log(data);
+        if(data.err) {
+            alert("Email alredy exists!");
+        } else {
+            router.push('/StudentSuccess');
+        }
     }
-
-    useEffect(() => {
-        HandleSignUpStudent();
-    }, [])
 
     return (
         <div className="sign-up-student">

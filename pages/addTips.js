@@ -8,20 +8,25 @@ import HeaderAccount from '../comps/Header';
 import * as network from '../network';
 import Link from 'next/link';
 
+import { Router, useRouter } from 'next/router'
+
 export default function Home() {
     const [subject, setSubject] = useState("");
     const [content, setContent] = useState("");
+
+    const router = useRouter();
 
     const handleAddTip = async () => {
         // look here!! pls name the inputs for useState as these values in the argument
         // the error will be gone til you add them
         let data = await network.createTip(subject, content);
         console.log(data);
+        router.push('/tips');
       }
     
-      useEffect(() => {
-        handleAddTip();
-      }, [])
+      // useEffect(() => {
+      //   handleAddTip();
+      // }, [])
 
     return (
         <div className="addtips_cont">
@@ -39,9 +44,9 @@ export default function Home() {
                   onChange ={(e)=> {
                     setContent(e.target.value)
                 }}/>
-                <Link href="/tips"><div className="addtips_save">
+                <div className="addtips_save">
                 <Button text="Add Tip" fontSize="16px" minWidth="286px" onClick={handleAddTip}/>
-                </div></Link>
+                </div>
             </div>
         </div>
     )

@@ -20,8 +20,11 @@ export default function mainPage() {
         // the error will be gone til you add them
         let data = await network.login(email, password);
         console.log(data);
-
-        router.push('/StudentProfileEdit');
+        if(data.userToken) {
+            router.push('/StudentProfile');
+        } else {
+            alert("Incorrect Email or Password!");
+        }
     }
 
     return (

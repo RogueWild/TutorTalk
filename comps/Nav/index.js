@@ -2,7 +2,8 @@ import Link from 'next/link';
 import React, { useState, useEffect } from 'react';
 import styled, { css } from 'styled-components';
 import { motion } from 'framer-motion';
-import {useRouter} from 'next/router';
+
+import {Router, useRouter} from 'next/router';
 
 const NavBox = styled.div`
    display:flex;
@@ -64,7 +65,20 @@ const Nav = ({}) => {
     const [position, setPosition] = useState(false);
 
     const router = useRouter();
-    console.log(router);
+
+    const handleProfile = async () => {
+        router.push('../StudentProfile');
+    }
+    //no forum yet
+    const handleForum = async () => {
+        router.push('/forum');
+    }
+    const handleTutorTips = async () => {
+        router.push('/tips');
+    }
+    const handleTutors = async () => {
+        router.push('/search');
+    }
 
     useEffect(()=> {
         setPosition(router.pathname)
@@ -76,25 +90,25 @@ const Nav = ({}) => {
 
     return <NavBox>
             <NavContent>
-                <Link href="../profilePage"><div onClick={()=>
-                    setPosition()}>
+                <div onClick={()=>
+                    setPosition(), handleProfile}>
                     <FramerCont text="Profile"></FramerCont>
-                </div></Link>
+                </div>
 
                 <div onClick={()=>
                     setPosition(0)}>
                     <FramerCont text="Forum"></FramerCont>
                 </div>
 
-                <Link href="../tips"><div onClick={()=>
-                    setPosition(2)}>
+                <div onClick={()=>
+                    setPosition(2), handleTutorTips}>
                     <FramerCont text="Tutor Tips"></FramerCont>
-                </div></Link>
+                </div>
 
-                <Link href="../search"><div onClick={()=>
-                    setPosition()}>
+                <div onClick={()=>
+                    setPosition(), handleTutors}>
                     <FramerCont text="Tutors"></FramerCont>
-                </div></Link>
+                </div>
 
                 <NavBar position={position}></NavBar>
             </NavContent>

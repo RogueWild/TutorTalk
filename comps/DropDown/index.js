@@ -4,6 +4,8 @@ import styled, { css } from 'styled-components';
 import { motion } from 'framer-motion';
 import Button from '../Button';
 
+import { Router, useRouter } from 'next/router'
+
 const DropDownBox = styled.div`
     background-color:#FFF;
     border: 0.25px solid #999;
@@ -22,18 +24,31 @@ const DropDownContent = styled.div`
     }
 `;
 
-const DropDown = ({}) => {
-    
+const DropDown = ({ }) => {
+
+    const router = useRouter();
+
+    const handleEditProfile = async () => {
+        router.push('../StudentProfileEdit');
+    }
+    const handleEditAccount = async () => {
+        router.push('../accountSettings');
+    }
+    const handleLogout = async () => {
+        let data = await network.logout();
+        router.push('../');
+    }
+
     return <DropDownBox>
         <DropDownContent>
-            <Link href="../profileEditPage"><div className="buttons">
-                <Button text="Edit Profile" fontSize={"17px"}/>
-            </div></Link>
-            <Link href="../accountSettings"><div className="buttons">
-                <Button text="Edit Account" fontSize={"17px"}/>
-            </div></Link>
+            <div className="buttons">
+                <Button text="Edit Profile" fontSize={"17px"} onClick={handleEditProfile} />
+            </div>
+            <div className="buttons">
+                <Button text="Edit Account" fontSize={"17px"} onClick={handleEditAccount} />
+            </div>
             <Link href="../"><div className="buttons">
-                <Button text="Log Out" backgroundColor="#424242" hoverColor="#C4C4C4" fontSize={"17px"}/>
+                <Button text="Log Out" backgroundColor="#424242" hoverColor="#C4C4C4" fontSize={"17px"} onClick={handleLogout} />
             </div></Link>
         </DropDownContent>
     </DropDownBox>

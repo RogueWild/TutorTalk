@@ -7,7 +7,16 @@ import HeaderAccount from '../comps/Header';
 import Link from 'next/link';
 import * as network from '../network';
 
+import { Router, useRouter } from 'next/router'
+
 export default function TipsPage() {
+
+
+  const router = useRouter();
+
+  const handleToAddTip = async () => {
+      router.push('/addTips');
+  }
 
   const handleAddTip = async () => {
     // look here!! pls name the inputs for useState as these values in the argument
@@ -28,9 +37,9 @@ export default function TipsPage() {
         <div className="tips_header">
           <HeaderAccount text="Friendly Advice from Tutors on How to Succeed"/>
         </div>
-        <Link href="/addTips"><div className="tips_add_button">
-          <Button text="Add Tip"/>
-        </div></Link>
+        <div className="tips_add_button">
+          <Button text="Add Tip" onClick={handleToAddTip} />
+        </div>
         <div className="tips_content">
           <Tips/>
         </div>
