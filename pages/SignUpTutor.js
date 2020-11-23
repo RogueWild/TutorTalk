@@ -4,18 +4,23 @@ import HeaderAccount from '../comps/Header';
 import Button from '../comps/Button';
 import TutorSignUpForm from '../comps/TutorSignUpForm';
 
+import { Router, useRouter } from 'next/router'
+
 import Link from 'next/link'
 import * as network from '../network';
 
-export default function SignUpTutor(email, password, firstname, lastname, phonenumber) {
-  const HandleSignUpTutor = async () => {
+export default function SignUpTutor() {
+  const router = useRouter();
+
+  const HandleSignUpTutor = async (email, password, firstname, lastname, phonenumber) => {
     let data = await network.registerTutor(email, password, firstname, lastname, phonenumber);
     console.log(data);
+    if (data.err) {
+      alert("Email alredy exists!");
+    } else {
+      router.push('/screeningPage');
+    }
   }
-
-  useEffect(() => {
-    HandleSignUpTutor();
-  }, [])
 
   return (
     <div className="sign-up-tutor">

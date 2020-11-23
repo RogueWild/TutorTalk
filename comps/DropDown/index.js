@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import Button from '../Button';
 
 import { Router, useRouter } from 'next/router'
+import * as network from '../../network';
 
 const DropDownBox = styled.div`
     background-color:#FFF;
