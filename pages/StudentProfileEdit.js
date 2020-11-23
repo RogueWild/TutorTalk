@@ -9,7 +9,7 @@ import Button from '../comps/Button';
 import * as network from '../network';
 import React, { useState, useEffect } from 'react';
 
-// import * as network from '../network';
+import { Router, useRouter } from 'next/router'
 
 export default function profilePage() {
     const [picture, setPicture] = useState("");
@@ -19,13 +19,17 @@ export default function profilePage() {
     const [availabilities, setAvailabilities] = useState("");
     const [about, setAbout] = useState("");
 
+    const router = useRouter();
+
     const handleTutorProfile = async () => {
         let data = await network.createTutorProfile(picture, subject, job, diploma, availabilities, about);
         console.log(data);
+
+        router.push('/StudentProfile');
     }
-    useEffect(() => {
-        handleTutorProfile();
-    }, [])
+    // useEffect(() => {
+    //     handleTutorProfile();
+    // }, [])
 
     return (
         <div>
@@ -45,7 +49,7 @@ export default function profilePage() {
                         setSubject(e.target.value),
                             setJob(e.target.value),
                             setDiploma(e.target.value)
-                    }} />
+                    }} story={false}/>
                     <div className="profile-edit-about-input">
                         <AboutBox color={0} text2={"About"} text={"Dummy text"} size={0} onChange={(e) => {
                             setAbout(e.target.value)
@@ -53,9 +57,9 @@ export default function profilePage() {
                     </div>
                 </div>
             </div>
-            <Link href="/profilePage"><div className="profile-edit-save-button">
+            <div className="profile-edit-save-button">
                 <Button text={"Save Changes"} fontSize="16px" onClick={handleTutorProfile} />
-            </div></Link>
+            </div>
         </div>
     )
 }

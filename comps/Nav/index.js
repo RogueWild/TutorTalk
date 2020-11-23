@@ -2,7 +2,8 @@ import Link from 'next/link';
 import React, { useState, useEffect } from 'react';
 import styled, { css } from 'styled-components';
 import { motion } from 'framer-motion';
-import {useRouter} from 'next/router';
+
+import {Router, useRouter} from 'next/router';
 
 const NavBox = styled.div`
    display:flex;
@@ -24,13 +25,13 @@ const NavBar = styled.div`
     ${props=>props.position === 0 && css`
     left:28.8%;
     `};
-    ${props=>props.position === 1 && css`
+    ${props=>props.position === 0 && css`
     left:39.3%;
     `};
-    ${props=>props.position === 2 && css`
+    ${props=>props.position === "/tips" && css`
     left:50.8%;
     `};
-    ${props=>props.position === 3 && css`
+    ${props=>props.position === "/search" && css`
     left:62.5%;
     `};
     background-color:#424242;
@@ -63,8 +64,22 @@ export const FramerCont = ({text}) => {
 const Nav = ({}) => {
     const [position, setPosition] = useState(false);
 
-    // const router = useRouter();
-    // console.log(router);
+    const router = useRouter();
+
+    const handleProfile = async () => {
+        router.push('../StudentProfile');
+    }
+    //no forum yet
+    const handleForum = async () => {
+        router.push('/forum');
+    }
+    const handleTutorTips = async () => {
+        router.push('/tips');
+    }
+    const handleTutors = async () => {
+        router.push('/search');
+    }
+
 
     // useEffect(()=> {
     //     setPosition(router.pathname)
@@ -76,23 +91,23 @@ const Nav = ({}) => {
 
     return <NavBox>
             <NavContent>
-                <Link href="../profilePage"><div onClick={()=>
-                    setPosition(0)}>
+                <div onClick={()=>
+                    setPosition(), handleProfile}>
                     <FramerCont text="Profile"></FramerCont>
                 </div></Link>
 
                 <div onClick={()=>
-                    setPosition(1)}>
+                    setPosition(0)}>
                     <FramerCont text="Forum"></FramerCont>
                 </div>
 
-                <Link href="../tips"><div onClick={()=>
-                    setPosition(2)}>
+                <div onClick={()=>
+                    setPosition(2), handleTutorTips}>
                     <FramerCont text="Tutor Tips"></FramerCont>
                 </div></Link>
 
-                <Link href="../search"><div onClick={()=>
-                    setPosition(3)}>
+                <div onClick={()=>
+                    setPosition(), handleTutors}>
                     <FramerCont text="Tutors"></FramerCont>
                 </div></Link>
 

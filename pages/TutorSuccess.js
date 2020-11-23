@@ -4,7 +4,15 @@ import AccountHeader from '../comps/Header';
 import TutorSuccessLottie from '../comps/Lotties/TutorSuccessLottie';
 import Button from '../comps/Button';
 
+import { Router, useRouter } from 'next/router'
+
 export default function SignUp() {
+    const router = useRouter();
+
+    const HandleEditPage = async () => {
+        router.push('/profileEditPage');
+    }
+
     return (
         <div className="tutor-success">
             <LogoHeader profileDisplay="none" />
@@ -13,7 +21,7 @@ export default function SignUp() {
                 <AccountHeader text="You are now a certified tutor!" />
                 <TutorSuccessLottie />
                 <div className="button">
-                    <Button text="Continue" fontSize="18px" />
+                    <Button text="Continue" fontSize="18px" onClick={HandleEditPage} />
                 </div>
             </div>
             <div className="footer">

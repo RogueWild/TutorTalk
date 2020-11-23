@@ -15,8 +15,8 @@ const InputBox = styled.input`
 `;
 
 
-const InputText = ({ placeholder, width, margin }) => {
-    return <InputBox placeholder={placeholder} width={width} margin={margin}>
+const InputText = ({ placeholder, width, margin, onChange }) => {
+    return <InputBox placeholder={placeholder} width={width} margin={margin} onChange={onChange}>
     </InputBox>
 }
 

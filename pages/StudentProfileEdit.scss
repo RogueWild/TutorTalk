@@ -1,0 +1,24 @@
+html, body {
+    margin:0;
+}
+.profile-edit-content-box {
+    display: flex;
+    margin:100px 70px 20px 70px;
+    .profile-edit-left-side, .profile-edit-right-side {
+        display:flex;
+        flex-direction:column;
+        padding-right: 50px;
+        .contact-input {
+            padding-top:30px;
+        }
+    }
+    .profile-edit-right-side {
+        .profile-edit-about-input {
+            padding:30px 0px;
+        }
+    }
+}
+.profile-edit-save-button {
+    position:relative;
+    left:50%;
+}

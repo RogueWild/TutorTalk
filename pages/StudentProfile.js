@@ -10,12 +10,10 @@ import AboutBox from '../comps/About';
 import * as network from '../network';
 
 export default function profilePage() {
+    const [about, setAbout] = useState("")
 
-    // Henry's example
-    // const [about, setAbout] = useState("")
     const HandleProfile = async () => {
-        var resp = await network.viewTutorProfile;
-        // below line is henry's example
+        var resp = await network.viewTutorProfile(about);
         setAbout(resp.data.about)
     }
 
@@ -25,19 +23,18 @@ export default function profilePage() {
 
     return (
         <div>
-            {/* onClick={HandleProfile} */}
             <LogoHeader displayIcon={true} />
             <Nav />
             <div className="content-box">
                 <div className="left-side">
-                    <ProfilePhoto profileimg={true} />
+                    <ProfilePhoto profileimg={true} src="profilepic2.png" />
                     <div className="contact"><Contact /></div>
                 </div>
                 <div className="right-side">
-                    <Summary />
+                    <Summary HeadTxt="Chris Young" SubTxt="Student, Architecture, BCIT" image={true} story={false} />
                     <div className="about-box">
-                        {/* text={about} */}
-                        <AboutBox color={0} text2={"About"} text={"some dummy data"} size={0} />
+                        text={about}
+                        <AboutBox color={0} text2={"About"} text={"I’m an Architecture student at BCIT, and I’m struggling with some of my classes. Looking forwad to learning together with my fellow tutor-mates on here. "} size={0} />
                     </div>
                 </div>
             </div>

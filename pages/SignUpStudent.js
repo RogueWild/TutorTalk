@@ -1,22 +1,25 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import LogoHeader from '../comps/LogoHeader';
 import HeaderAccount from '../comps/Header';
 import Button from '../comps/Button';
-import SignUpForm from '../comps/SignUpForm';
+import StudentSignUpForm from '../comps/StudentSignUpForm';
 
-import Link from 'next/link'
-import axios from 'axios';
+import { Router, useRouter } from 'next/router'
+
+import Link from 'next/link';
+import * as network from '../network';
 
 export default function SignUpStudent() {
+    const router = useRouter();
 
-    const HandleSignUpStudent = async () => {
-
-        //Communicate with the endpoint
-        var resp = await axios.post("http://localhost:8888/user/register/student");
-
-        //Response comes back as an object from the server
-        console.log(resp.data);
-
+    const HandleSignUpStudent = async (email, password, firstname, lastname, phonenumber) => {
+        let data = await network.registerStudent(email, password, firstname, lastname, phonenumber);
+        console.log(data);
+        if(data.err) {
+            alert("Email alredy exists!");
+        } else {
+            router.push('/StudentSuccess');
+        }
     }
 
     return (
@@ -31,10 +34,7 @@ export default function SignUpStudent() {
                     </Link>
                 </div>
                 <div className="signUp">
-                    <SignUpForm />
-                    <div className="buttons">
-                        <Button text="Sign Up" onClick={HandleSignUpStudent} />
-                    </div>
+                    <StudentSignUpForm onClick={HandleSignUpStudent} />
                 </div>
             </div>
             <div className="footer">

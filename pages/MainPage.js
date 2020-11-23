@@ -1,22 +1,30 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import LogoHeader from '../comps/LogoHeader';
 import HeaderAccount from '../comps/Header';
 import Button from '../comps/Button';
 import Input from '../comps/Input';
 
-import Link from 'next/link'
-import axios from 'axios';
+import { Router, useRouter } from 'next/router'
 
-export default function SignUpStudent() {
+import Link from 'next/link';
+import * as network from '../network';
 
-    const HandleLogin = async () => {
+export default function mainPage() {
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
 
-        //Communicate with the endpoint
-        var resp = await axios.post("http://localhost:8888/user/register/student");
+    const router = useRouter();
 
-        //Response comes back as an object from the server
-        console.log(resp.data);
-
+    const handleLogin = async () => {
+        // look here!! pls name the inputs for useState as these values in the argument
+        // the error will be gone til you add them
+        let data = await network.login(email, password);
+        console.log(data);
+        if(data.userToken) {
+            router.push('/StudentProfile');
+        } else {
+            alert("Incorrect Email or Password!");
+        }
     }
 
     return (
@@ -29,12 +37,16 @@ export default function SignUpStudent() {
                 <div className="login">
                     <div className="header">
                         <HeaderAccount text="Log in to" color="#676767" fontSize="32px" margin="0px 10px 40px 0px" />
-                        <HeaderAccount text="TUTOR TALK" color="#FFBF00" fontSize="32px" />
+                        <HeaderAccount text="TUTOR TALK" color="#FFBF00" fontSize="32px" margin="0px 10px 40px 0px" />
                     </div>
-                    <Input placeholder="Email" width="50%" />
-                    <Input placeholder="Password" width="50%" margin="10px 0px 0px 0px" />
+                    <Input placeholder="Email" width="50%" onChange={(e) => {
+                        setEmail(e.target.value)
+                    }} />
+                    <Input placeholder="Password" width="50%" margin="10px 0px 0px 0px" onChange={(e) => {
+                        setPassword(e.target.value)
+                    }} />
                     <div className="buttons">
-                        <Button text="Log in" margin="40px 0px 0px 0px" onClick={HandleLogin} />
+                        <Button text="Log in" margin="40px 0px 0px 0px" onClick={handleLogin} />
                     </div>
                 </div>
 

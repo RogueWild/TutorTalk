@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 const TipsBox = styled.div`
     display:flex;
     flex-direction:column;
-    max-width:70%;
+    min-width:70%;
     background-color:#FFF3D3;
     border-radius:5px;
     padding:20px;
@@ -57,7 +57,6 @@ const Tips = ({tutorname, tutorinfo, tiptext}) => {
         <div className="tiptextbox">
             <div className="tiptext">{tiptext}</div>
         </div>
-        <div className="dots"><b>. . .</b></div>
     </TipsBox>
 
 }
@@ -65,7 +64,7 @@ const Tips = ({tutorname, tutorinfo, tiptext}) => {
 Tips.defaultProps = {
     tutorname:"Tutor's Name",
     tutorinfo:"Tutor Type - Course Name",
-    tiptext:"Tips from the tutor go here"
+    tiptext:"Tips from the tutor go here",
 }
 
 export default Tips;
