@@ -94,7 +94,7 @@ const Nav = ({}) => {
                 <div onClick={()=>
                     setPosition(), handleProfile}>
                     <FramerCont text="Profile"></FramerCont>
-                </div></Link>
+                </div>
 
                 <div onClick={()=>
                     setPosition(0)}>
@@ -104,12 +104,12 @@ const Nav = ({}) => {
                 <div onClick={()=>
                     setPosition(2), handleTutorTips}>
                     <FramerCont text="Tutor Tips"></FramerCont>
-                </div></Link>
+                </div>
 
                 <div onClick={()=>
                     setPosition(), handleTutors}>
                     <FramerCont text="Tutors"></FramerCont>
-                </div></Link>
+                </div>
 
                 <NavBar position={position}></NavBar>
             </NavContent>
