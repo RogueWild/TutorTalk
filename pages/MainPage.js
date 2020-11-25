@@ -16,18 +16,18 @@ export default function mainPage() {
     const router = useRouter();
 
     const handleLogin = async () => {
-        let data = await network.login(email, password);
-        console.log(data);
-
         if (!email || !password) {
             alert("Please make sure to fill email and password");
         } else {
+            let data = await network.login(email, password);
+            console.log(data);
             if (data.userToken) {
                 router.push("/StudentProfile");
             } else {
                 alert("Incorrect email or password");
             }
         }
+
     }
 
     return (
