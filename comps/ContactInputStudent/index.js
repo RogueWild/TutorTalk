@@ -20,7 +20,7 @@ const InputImg = styled.img`
 `;
 
 // to-do auto fill the phone and email
-const ContactInput = ({ }) => {
+const ContactInputStudent = ({ }) => {
     return <ContactInputCont>
         <InputBox>
             <InputImg src={"phone.png"} />
@@ -30,15 +30,7 @@ const ContactInput = ({ }) => {
             <InputImg src={"message.png"} />
             <InputText placeholder={"Email"} width={"78%"} />
         </InputBox>
-        <InputBox>
-            <InputImg src={"time.png"} />
-            <InputText placeholder={"Hours of availability, Zoom Link"} width={"78%"} />
-        </InputBox>
-        {/* <BriefInput image={true} src="/phone.png" width="498px" text="(604)284-9574"/>
-        <BriefInput image={true} src="/message.png" text="emailname@gmail.com" width="455px" TxtColor="#FFBF00"/>
-        <BriefInput image={true} src="/time.png" width="226px" text="Mondays – 13:30-17:30 Thursdays – 9:00-12:00 Zoom Link: www.zoomlink.com"/> */}
-
     </ContactInputCont>
 }
 
-export default ContactInput;
+export default ContactInputStudent;

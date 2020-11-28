@@ -2,7 +2,7 @@ import Link from 'next/link';
 import LogoHeader from '../comps/LogoHeader';
 import Nav from '../comps/Nav';
 import ProfilePhoto from '../comps/ProfilePhoto';
-import ContactInput from '../comps/ContactInput';
+import ContactInputStudent from '../comps/ContactInputStudent';
 import SummaryInput from '../comps/SummaryInput';
 import AboutBox from '../comps/About';
 import Button from '../comps/Button';
@@ -37,7 +37,7 @@ export default function profilePage() {
                     <ProfilePhoto onChange={(e) => {
                         setPicture(e.target.value)
                     }} />
-                    <div className="contact-input"><ContactInput /></div>
+                    <div className="contact-input"><ContactInputStudent /></div>
                 </div>
                 <div className="profile-edit-right-side">
                     <SummaryInput onChange={(e) => {
