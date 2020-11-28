@@ -9,20 +9,17 @@ import Button from '../comps/Button';
 import * as network from '../network';
 import React, { useState, useEffect } from 'react';
 
-import { Router, useRouter } from 'next/router'
+import { useRouter } from 'next/router'
 
 export default function profilePage() {
     const [picture, setPicture] = useState("");
-    const [subject, setSubject] = useState("");
-    const [job, setJob] = useState("");
-    const [diploma, setDiploma] = useState("");
-    const [availabilities, setAvailabilities] = useState("");
+    const [program, setSubject] = useState("");
     const [about, setAbout] = useState("");
 
     const router = useRouter();
 
     const handleStudentProfile = async () => {
-        let data = await network.createStudentProfile(picture, subject, job, diploma, availabilities, about);
+        let data = await network.createStudentProfile(picture, program, about);
         console.log(data);
 
         router.push('/StudentProfile');
@@ -40,25 +37,24 @@ export default function profilePage() {
                     <ProfilePhoto onChange={(e) => {
                         setPicture(e.target.value)
                     }} />
-                    <div className="contact-input"><ContactInput onChange={(e) => {
-                        setAvailabilities(e.target.value)
-                    }} /></div>
+                    <div className="contact-input"><ContactInput /></div>
                 </div>
                 <div className="profile-edit-right-side">
                     <SummaryInput onChange={(e) => {
                         setSubject(e.target.value),
                             setJob(e.target.value),
                             setDiploma(e.target.value)
-                    }} story={false}/>
+                    }} story={false} />
                     <div className="profile-edit-about-input">
                         <AboutBox color={0} text2={"About"} text={"Dummy text"} size={0} onChange={(e) => {
                             setAbout(e.target.value)
-                        }} input={true}/>
+                        }} input={true} />
                     </div>
                 </div>
             </div>
             <div className="profile-edit-save-button">
-                <Button text={"Save Changes"} fontSize="16px" onClick={handleStudentProfile} />
+                {/* onClick={handleStudentProfile} */}
+                <Button text={"Save Changes"} fontSize="16px" />
             </div>
         </div>
     )

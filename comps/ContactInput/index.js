@@ -19,19 +19,20 @@ const InputImg = styled.img`
     margin:0 14px 0 0;
 `;
 
-const ContactInput = ({}) => {
+// to-do auto fill the phone and email
+const ContactInput = ({ }) => {
     return <ContactInputCont>
         <InputBox>
-            <InputImg src={"phone.png"}/>
-            <InputText placeholder={"Phone Number"} width={"78%"}/>
+            <InputImg src={"phone.png"} />
+            <InputText placeholder={"Phone Number"} width={"78%"} />
         </InputBox>
         <InputBox>
-            <InputImg src={"message.png"}/>
-            <InputText placeholder={"Email"} width={"78%"}/>
+            <InputImg src={"message.png"} />
+            <InputText placeholder={"Email"} width={"78%"} />
         </InputBox>
         <InputBox>
-            <InputImg src={"time.png"}/>
-            <InputText placeholder={"Hours of availability, Zoom Link"} width={"78%"}/>
+            <InputImg src={"time.png"} />
+            <InputText placeholder={"Hours of availability, Zoom Link"} width={"78%"} />
         </InputBox>
         {/* <BriefInput image={true} src="/phone.png" width="498px" text="(604)284-9574"/>
         <BriefInput image={true} src="/message.png" text="emailname@gmail.com" width="455px" TxtColor="#FFBF00"/>

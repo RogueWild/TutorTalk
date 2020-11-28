@@ -4,7 +4,7 @@ import HeaderAccount from '../comps/Header';
 import Button from '../comps/Button';
 import TutorSignUpForm from '../comps/TutorSignUpForm';
 
-import { Router, useRouter } from 'next/router'
+import { useRouter } from 'next/router'
 
 import Link from 'next/link'
 import * as network from '../network';
@@ -13,12 +13,16 @@ export default function SignUpTutor() {
   const router = useRouter();
 
   const HandleSignUpTutor = async (email, password, firstname, lastname, phonenumber) => {
-    let data = await network.registerTutor(email, password, firstname, lastname, phonenumber);
-    console.log(data);
-    if (data.err) {
-      alert("Email alredy exists!");
+    if (!email || !password || !firstname || !lastname || !phonenumber) {
+      alert("Please fill up all of the fields.");
     } else {
-      router.push('/screeningPage');
+      let data = await network.registerTutor(email, password, firstname, lastname, phonenumber);
+      console.log(data);
+      if (data.err) {
+        alert("This email has already been used.");
+      } else {
+        router.push('/screeningPage');
+      }
     }
   }
 

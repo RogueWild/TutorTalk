@@ -13,12 +13,16 @@ export default function SignUpStudent() {
     const router = useRouter();
 
     const HandleSignUpStudent = async (email, password, firstname, lastname, phonenumber) => {
-        let data = await network.registerStudent(email, password, firstname, lastname, phonenumber);
-        console.log(data);
-        if(data.err) {
-            alert("Email alredy exists!");
+        if (!email || !password || !firstname || !lastname || !phonenumber) {
+            alert("Please fill up all of the fields.");
         } else {
-            router.push('/StudentSuccess');
+            let data = await network.registerStudent(email, password, firstname, lastname, phonenumber);
+            console.log(data);
+            if (data.err) {
+                alert("This email has already been used.");
+            } else {
+                router.push('/StudentSuccess');
+            }
         }
     }
 

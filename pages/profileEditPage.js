@@ -9,7 +9,6 @@ import Button from '../comps/Button';
 import * as network from '../network';
 import React, { useState, useEffect } from 'react';
 
-// import * as network from '../network';
 
 export default function profilePage() {
     const [picture, setPicture] = useState("");
@@ -19,13 +18,13 @@ export default function profilePage() {
     const [availabilities, setAvailabilities] = useState("");
     const [about, setAbout] = useState("");
 
-    const handleTutorProfile = async () => {
-        let data = await network.createTutorProfile(picture, subject, job, diploma, availabilities, about);
-        console.log(data);
-    }
-    useEffect(() => {
-        handleTutorProfile();
-    }, [])
+    // const handleTutorProfile = async () => {
+    //     let data = await network.createTutorProfile(picture, subject, job, diploma, availabilities, about);
+    //     console.log(data);
+    // }
+    // useEffect(() => {
+    //     handleTutorProfile();
+    // }, [])
 
     return (
         <div>
@@ -49,12 +48,13 @@ export default function profilePage() {
                     <div className="profile-edit-about-input">
                         <AboutBox color={0} text2={"About"} text={"Dummy text"} size={0} onChange={(e) => {
                             setAbout(e.target.value)
-                        }} input={true}/>
+                        }} input={true} />
                     </div>
                 </div>
             </div>
             <Link href="/profilePage"><div className="profile-edit-save-button">
-                <Button text={"Save Changes"} fontSize="16px" onClick={handleTutorProfile} />
+                {/* onClick={handleTutorProfile} */}
+                <Button text={"Save Changes"} fontSize="16px" />
             </div></Link>
         </div>
     )

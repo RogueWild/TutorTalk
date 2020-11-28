@@ -30,9 +30,8 @@ export function login(email, password) {
 }
 
 // profile
-// no frontend page for this!!!!!
 export function createStudentProfile(picture, program, helps, about) {
-    return axios.post('https://tutor-talk.herokuapp.com/profile/student/create', { picture, program, helps, about })
+    return axios.post('https://tutor-talk.herokuapp.com/profile/student/create', { picture, program, about })
         .then(data => {
             return data.data;
         })
