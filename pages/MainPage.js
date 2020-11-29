@@ -4,8 +4,7 @@ import HeaderAccount from '../comps/Header';
 import Button from '../comps/Button';
 import Input from '../comps/Input';
 
-import { Router, useRouter } from 'next/router'
-
+import { useRouter } from 'next/router'
 import Link from 'next/link';
 import * as network from '../network';
 
@@ -34,7 +33,6 @@ export default function mainPage() {
                 alert("Incorrect email or password");
             }
         }
-
     }
 
     return (
@@ -43,7 +41,6 @@ export default function mainPage() {
             <LogoHeader profileDisplay="none" />
 
             <div className="contents">
-
                 <div className="login">
                     <div className="header">
                         <HeaderAccount text="Log in to" color="#676767" fontSize="32px" margin="0px 10px 40px 0px" />
@@ -72,10 +69,8 @@ export default function mainPage() {
                 </div>
 
             </div>
-
             <div className="footer">
             </div>
-
         </div>
     )
 }

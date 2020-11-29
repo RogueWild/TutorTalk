@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import styled, { css } from 'styled-components';
+import React from 'react';
+import styled from 'styled-components';
 import InputText from '../Input';
 
 const Container = styled.div`
@@ -21,10 +21,10 @@ color: #424242;
 margin: ${props => props.margin ? props.margin : ""};
 `;
 
-const InputLabel = ({text, margin, placeholder}) => {
+const InputLabel = ({ text, margin, placeholder, onChange }) => {
     return <Container>
         <InputT margin={margin}>{text}</InputT>
-            <InputText placeholder={placeholder} margin="0px 0px 20px 0px" width="459px"/>
+        <InputText placeholder={placeholder} margin="0px 0px 20px 0px" width="459px" onChange={onChange} />
     </Container>
 }
 

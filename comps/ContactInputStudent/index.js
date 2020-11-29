@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import styled, { css } from 'styled-components';
-import BriefInput from '../BriefInput';
+import React from 'react';
+import styled from 'styled-components';
 import InputText from '../Input';
 
 const ContactInputCont = styled.div`
@@ -19,7 +18,7 @@ const InputImg = styled.img`
     margin:0 14px 0 0;
 `;
 
-// to-do auto fill the phone and email
+// to-do: auto fill the phone and email
 const ContactInputStudent = ({ }) => {
     return <ContactInputCont>
         <InputBox>

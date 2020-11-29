@@ -1,5 +1,5 @@
 import React from 'react';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 
 const InputBox = styled.input`
     width:${props => props.width ? props.width : ""};
@@ -14,7 +14,6 @@ const InputBox = styled.input`
     }
 `;
 
-
 const InputText = ({ placeholder, width, margin, onChange }) => {
     return <InputBox placeholder={placeholder} width={width} margin={margin} onChange={onChange}>
     </InputBox>
@@ -22,8 +21,7 @@ const InputText = ({ placeholder, width, margin, onChange }) => {
 
 
 InputText.defaultProps = {
-    placeholder: "Defaul Text"
+    placeholder: "Write something about yourself"
 }
-
 
 export default InputText;

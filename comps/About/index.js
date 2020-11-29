@@ -3,9 +3,9 @@ import styled, { css } from 'styled-components';
 import InputText from '../Input';
 
 const AboutDiv = styled.div`
-${props=>props.size === 0 && css`
+${props => props.size === 0 && css`
 font-size: 16px;   `};
-${props=>props.color === 0 && css`
+${props => props.color === 0 && css`
 color:#000000;   `};
 padding: 10px;
 `;
@@ -16,13 +16,12 @@ display: flex;
 flex-direction:column;
 `
 
-const AboutBox = ({text, color, size, text2, input}) => {
-    return <AboutHeader> {text2} 
-    {input === true ? <InputText/> : <AboutDiv color={color} size={size}>           
+const AboutBox = ({ text, color, size, text2, input }) => {
+    return <AboutHeader> {text2}
+        {input === true ? <InputText /> : <AboutDiv color={color} size={size}>
             {text}
-    </AboutDiv>}
-    </AboutHeader> 
-    
+        </AboutDiv>}
+    </AboutHeader>
 }
 
 

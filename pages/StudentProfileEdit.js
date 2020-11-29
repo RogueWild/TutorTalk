@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import LogoHeader from '../comps/LogoHeader';
 import Nav from '../comps/Nav';
 import ProfilePhoto from '../comps/ProfilePhoto';
@@ -13,7 +12,7 @@ import { useRouter } from 'next/router'
 
 export default function profilePage() {
     const [picture, setPicture] = useState("");
-    const [program, setSubject] = useState("");
+    const [program, setProgram] = useState("");
     const [about, setAbout] = useState("");
 
     const router = useRouter();
@@ -21,12 +20,12 @@ export default function profilePage() {
     const handleStudentProfile = async () => {
         let data = await network.createStudentProfile(picture, program, about);
         console.log(data);
-
+        console.log(picture, program, about)
         router.push('/StudentProfile');
     }
-    useEffect(() => {
-        handleStudentProfile();
-    }, [])
+    // useEffect(() => {
+    //     handleStudentProfile();
+    // }, [])
 
     return (
         <div>
@@ -41,20 +40,17 @@ export default function profilePage() {
                 </div>
                 <div className="profile-edit-right-side">
                     <SummaryInput onChange={(e) => {
-                        setSubject(e.target.value),
-                            setJob(e.target.value),
-                            setDiploma(e.target.value)
+                        setProgram(e.target.value)
                     }} story={false} />
                     <div className="profile-edit-about-input">
-                        <AboutBox color={0} text2={"About"} text={"Dummy text"} size={0} onChange={(e) => {
+                        <AboutBox color={0} text2={"About"} size={0} onChange={(e) => {
                             setAbout(e.target.value)
                         }} input={true} />
                     </div>
                 </div>
             </div>
             <div className="profile-edit-save-button">
-                {/* onClick={handleStudentProfile} */}
-                <Button text={"Save Changes"} fontSize="16px" />
+                <Button text={"Save Changes"} fontSize="16px" onClick={handleStudentProfile} />
             </div>
         </div>
     )

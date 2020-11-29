@@ -47,28 +47,28 @@ const SummaryInputImg = styled.img`
     margin-right:15px;
 `;
 
-const SummaryInput = ({story}) => {
-    const [focused, setfocused] = useState(false)
-    return <SummaryInputCont onClick={()=> {
-        setfocused(true);
-    }}> 
+const SummaryInput = ({ story }) => {
+    const [focused, setFocused] = useState(false)
+    return <SummaryInputCont onClick={() => {
+        setFocused(true);
+    }}>
         <HeaderInputBox>
             <InputText placeholder={"Full Name"} width={"80%"} margin={"10px 0"} />
-            <InputText placeholder={"Tutor Title, Subject Name, Institute Name"} width={"80%"} margin={"5px 0"} />
+            <InputText placeholder={"Program Name"} width={"80%"} margin={"5px 0"} />
         </HeaderInputBox>
 
         {story === false ? null : <SummaryInputBox>
-            <SummaryInputImg src={"briefcase.png"}/>
-            <InputText placeholder={"Work Experience"} margin={"50px 0 0 0"} width={"50%"}/>
+            <SummaryInputImg src={"briefcase.png"} />
+            <InputText placeholder={"Work Experience"} margin={"50px 0 0 0"} width={"50%"} />
         </SummaryInputBox>}
         {story === false ? null : <SummaryInputBox>
-            <SummaryInputImg src={"cap.png"}/>
-            <InputText placeholder={"Level of Education"} margin={"15px 0 0 0"} width={"50%"}/>
+            <SummaryInputImg src={"cap.png"} />
+            <InputText placeholder={"Level of Education"} margin={"15px 0 0 0"} width={"50%"} />
         </SummaryInputBox>}
         {story === false ? null : <SummaryInputBox>
-            <InputText placeholder={"Hours of Availability, Zoom Link"} margin={"15px 0 0 46px"} width={"50%"}/>
+            <InputText placeholder={"Hours of Availability, Zoom Link"} margin={"15px 0 0 46px"} width={"50%"} />
         </SummaryInputBox>}
-        
+
         {/* <BriefInput image={true} width="498px"/>
         <BriefInput image={true} src="/mortarboard.png" text="Diploma of Computer Science
     Studying for Bachelor’s of Computer Science" width="455px"/>
