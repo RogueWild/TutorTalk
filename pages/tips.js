@@ -25,9 +25,9 @@ export default function TipsPage() {
     let tips = await network.tips();
     console.log(tips);
   }
-  useEffect(() => {
-    displayTips();
-  }, [])
+//   useEffect(() => {
+//     displayTips();
+//   }, [])
 
   return (
     <div className="tips_main">
