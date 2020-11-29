@@ -71,7 +71,7 @@ export function checkTutorProfile() {
 
 // tips
 export function checkRole() {
-    return axios.post(host + '/tips/rolecheck')
+    return axios.post(host + '/tips')
         .then(data => {
             return data.data;
         })
