@@ -11,10 +11,6 @@ import { useRouter } from 'next/router'
 export default function TipsPage() {
   const router = useRouter();
 
-  useEffect(() => {
-    displayTips();
-  }, [])
-
   const handleToAddTip = async () => {
     let data = await network.checkRole();
     console.log(data);
@@ -29,6 +25,9 @@ export default function TipsPage() {
     let tips = await network.tips();
     console.log(tips);
   }
+  useEffect(() => {
+    displayTips();
+  }, [])
 
   return (
     <div className="tips_main">
@@ -42,6 +41,9 @@ export default function TipsPage() {
           <Button text="Add Tip" onClick={handleToAddTip} />
         </div>
         <div className="tips_content">
+          {/* {tips.map(tip => {
+            console.log(tip.subject)
+          })} */}
           <Tips />
         </div>
       </div>
