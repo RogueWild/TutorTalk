@@ -122,10 +122,16 @@ export default function TipsPage() {
     let tips = await network.tips();
     console.log(tips);
   }
+<<<<<<< HEAD
 
   // useEffect(() => {
   //   displayTips();
   // }, [])
+=======
+//   useEffect(() => {
+//     displayTips();
+//   }, [])
+>>>>>>> 84cf202db0793c5b986919103586b011f677bc8f
 
   return (
     <div className="tips_main">

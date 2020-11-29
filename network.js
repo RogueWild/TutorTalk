@@ -2,7 +2,11 @@ import axios from 'axios'
 axios.defaults.withCredentials = true;
 
 const host = 'https://tutor-talk.herokuapp.com';
+<<<<<<< HEAD
 // const host = 'http://localhost:8888';
+=======
+//const host = 'http://localhost:8888';
+>>>>>>> 84cf202db0793c5b986919103586b011f677bc8f
 // auth
 export function registerStudent(email, password, firstname, lastname, phonenumber) {
     return axios.post(host + '/register/student', { email, password, firstname, lastname, phonenumber })
