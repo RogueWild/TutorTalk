@@ -4,8 +4,7 @@ import HeaderAccount from '../comps/Header';
 import Button from '../comps/Button';
 import Input from '../comps/Input';
 
-import { Router, useRouter } from 'next/router'
-
+import { useRouter } from 'next/router'
 import Link from 'next/link';
 import * as network from '../network';
 
@@ -16,14 +15,23 @@ export default function mainPage() {
     const router = useRouter();
 
     const handleLogin = async () => {
-        // look here!! pls name the inputs for useState as these values in the argument
-        // the error will be gone til you add them
-        let data = await network.login(email, password);
-        console.log(data);
-        if(data.userToken) {
-            router.push('/StudentProfile');
+        // inputs content validation
+        if (!email || !password) {
+            alert("Please make sure to fill email and password");
         } else {
-            alert("Incorrect Email or Password!");
+            let data = await network.login(email, password);
+            console.log(data);
+            // check password
+            if (data.userToken) {
+                // check user's role and send them to different profile pages
+                if (data.role == "student") {
+                    router.push("/StudentProfileEdit");
+                } else {
+                    router.push("/profileEditPage");
+                }
+            } else {
+                alert("Incorrect email or password");
+            }
         }
     }
 
@@ -33,7 +41,6 @@ export default function mainPage() {
             <LogoHeader profileDisplay="none" />
 
             <div className="contents">
-
                 <div className="login">
                     <div className="header">
                         <HeaderAccount text="Log in to" color="#676767" fontSize="32px" margin="0px 10px 40px 0px" />
@@ -62,10 +69,8 @@ export default function mainPage() {
                 </div>
 
             </div>
-
             <div className="footer">
             </div>
-
         </div>
     )
 }

@@ -9,17 +9,17 @@ import AboutBox from '../comps/About';
 
 import * as network from '../network';
 
-export default function profilePage() {
-    const [about, setAbout] = useState("")
+export default function StudentProfilePage() {
+    // const [about, setAbout] = useState("")
 
-    const HandleProfile = async () => {
-        var resp = await network.viewTutorProfile(about);
-        setAbout(resp.data.about)
-    }
+    // const HandleProfile = async () => {
+    //     var resp = await network.viewTutorProfile(about);
+    //     setAbout(resp.data.about)
+    // }
 
-    useEffect(() => {
-        HandleProfile();
-    }, [])
+    // useEffect(() => {
+    //     HandleProfile();
+    // }, [])
 
     return (
         <div>
@@ -33,7 +33,7 @@ export default function profilePage() {
                 <div className="right-side">
                     <Summary HeadTxt="Chris Young" SubTxt="Student, Architecture, BCIT" image={true} story={false} />
                     <div className="about-box">
-                        text={about}
+                        {/* text={about} */}
                         <AboutBox color={0} text2={"About"} text={"I’m an Architecture student at BCIT, and I’m struggling with some of my classes. Looking forwad to learning together with my fellow tutor-mates on here. "} size={0} />
                     </div>
                 </div>

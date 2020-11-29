@@ -1,59 +1,61 @@
 import axios from 'axios'
+axios.defaults.withCredentials = true;
 
+const host = 'https://tutor-talk.herokuapp.com';
+// const host = 'http://localhost:8888';
 // auth
 export function registerStudent(email, password, firstname, lastname, phonenumber) {
-    return axios.post('https://tutor-talk.herokuapp.com/register/student', { email, password, firstname, lastname, phonenumber })
+    return axios.post(host + '/register/student', { email, password, firstname, lastname, phonenumber })
         .then(data => {
             return data.data;
         })
 }
 
 export function registerTutor(email, password, firstname, lastname, phonenumber) {
-    return axios.post('https://tutor-talk.herokuapp.com/register/tutor', { email, password, firstname, lastname, phonenumber })
+    return axios.post(host + '/register/tutor', { email, password, firstname, lastname, phonenumber })
         .then(data => {
             return data.data;
         })
 }
 
 export function logout() {
-    return axios.get('/user/logout')
+    return axios.get(host + '/logout', {})
         .then(data => {
             return data.data;
         })
 }
 
 export function login(email, password) {
-    return axios.post('https://tutor-talk.herokuapp.com/login', { email, password })
+    return axios.post(host + '/login', { email, password })
         .then(data => {
             return data.data;
         })
 }
 
 // profile
-// no frontend page for this!!!!!
 export function createStudentProfile(picture, program, helps, about) {
-    return axios.post('https://tutor-talk.herokuapp.com/profile/student/create', { picture, program, helps, about })
+    return axios.post(host + '/profile/student/create', { picture, program, about })
         .then(data => {
             return data.data;
         })
 }
 
 export function viewStudentProfile() {
-    return axios.get('https://tutor-talk.herokuapp.com/profile/student', {})
+    return axios.get(host + '/profile/student', {})
         .then(data => {
             return data.data;
         })
 }
 
 export function createTutorProfile(picture, subject, job, diploma, availabilities, about) {
-    return axios.post('https://tutor-talk.herokuapp.com/profile/tutor/create', { picture, subject, job, diploma, availabilities, about })
+    return axios.post(host + '/profile/tutor/create', { picture, subject, job, diploma, availabilities, about })
         .then(data => {
             return data.data;
         })
 }
 
 export function viewTutorProfile() {
-    return axios.get('https://tutor-talk.herokuapp.com/profile/tutor')
+    return axios.get(host + '/profile/tutor')
         .then(data => {
             return data.data;
         })
@@ -61,22 +63,29 @@ export function viewTutorProfile() {
 
 // param for this???
 export function checkTutorProfile() {
-    return axios.get('https://tutor-talk.herokuapp.com/profile/view/:id')
+    return axios.get(host + '/profile/view/:id')
         .then(data => {
             return data.data;
         })
 }
 
 // tips
+export function checkRole() {
+    return axios.post(host + '/tips')
+        .then(data => {
+            return data.data;
+        })
+}
+
 export function createTip(subject, content) {
-    return axios.post('https://tutor-talk.herokuapp.com/tips/add', { subject, content })
+    return axios.post(host + '/tips/add', { subject, content })
         .then(data => {
             return data.data;
         })
 }
 
 export function tips() {
-    return axios.get('https://tutor-talk.herokuapp.com/tips')
+    return axios.get(host + '/tips')
         .then(data => {
             return data.data;
         })
@@ -84,7 +93,7 @@ export function tips() {
 
 // search tutors
 export function searchTutors(subject) {
-    return axios.post('https://tutor-talk.herokuapp.com/search', { subject })
+    return axios.post(host + '/search', { subject })
         .then(data => {
             return data.data;
         })

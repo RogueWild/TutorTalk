@@ -10,17 +10,17 @@ import * as network from '../network';
 import Link from 'next/link';
 
 export default function Search() {
-  const [subject, setSubject] = useState("");
+  // const [subject, setSubject] = useState("");
 
-  const handleSearch = async () => {
-    // look here!! pls name the inputs for useState as these values in the argument
-    // the error will be gone til you add them
-    let data = await network.searchTutors(subject);
-    console.log(data);
-  }
-  useEffect(() => {
-    handleSearch();
-  }, [])
+  // const handleSearch = async () => {
+  //   // look here!! pls name the inputs for useState as these values in the argument
+  //   // the error will be gone til you add them
+  //   let data = await network.searchTutors(subject);
+  //   console.log(data);
+  // }
+  // useEffect(() => {
+  //   handleSearch();
+  // }, [])
 
   return (
     <div className="search">

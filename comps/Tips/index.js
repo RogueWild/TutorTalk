@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import styled, { css } from 'styled-components';
+import React from 'react';
+import styled from 'styled-components';
 import { motion } from 'framer-motion';
 
 const TipsBox = styled.div`
@@ -34,10 +34,8 @@ const TutorInfo = styled.div`
     cursor:pointer;
 `;
 
-
-
-export const FramerCont = ({tutorname, tutorinfo}) => {
-    return <motion.div whileHover={{scale:1.015}}>
+export const FramerCont = ({ tutorname, tutorinfo }) => {
+    return <motion.div whileHover={{ scale: 1.015 }}>
         <TutorName>
             {tutorname}
         </TutorName>
@@ -47,11 +45,11 @@ export const FramerCont = ({tutorname, tutorinfo}) => {
     </motion.div>
 }
 
-const Tips = ({tutorname, tutorinfo, tiptext}) => {
+const Tips = ({ tutorname, tutorinfo, tiptext }) => {
     return <TipsBox>
         <div className="tipstitle">
-            <FramerCont 
-            tutorname={tutorname} tutorinfo={tutorinfo}>
+            <FramerCont
+                tutorname={tutorname} tutorinfo={tutorinfo}>
             </FramerCont>
         </div>
         <div className="tiptextbox">
@@ -62,9 +60,9 @@ const Tips = ({tutorname, tutorinfo, tiptext}) => {
 }
 
 Tips.defaultProps = {
-    tutorname:"Tutor's Name",
-    tutorinfo:"Tutor Type - Course Name",
-    tiptext:"Tips from the tutor go here",
+    tutorname: "Tutor's Name",
+    tutorinfo: "Subject Name",
+    tiptext: "Tips from the tutor go here",
 }
 
 export default Tips;

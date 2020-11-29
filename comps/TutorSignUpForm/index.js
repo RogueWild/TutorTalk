@@ -54,11 +54,11 @@ const TutorSignUpForm = ({ onClick }) => {
             setPhone(e.target.value)
         }} />
         <ButtonCont >
-        <Button onClick={() => {
+            <Button onClick={() => {
                 if (confirmPassword == password) {
                     onClick(email, password, firstname, lastname, phonenumber);
                 } else {
-                    alert("Password Does Not Match!")
+                    alert("Password does not match!")
                 }
             }}
                 text="Sign Up" />
