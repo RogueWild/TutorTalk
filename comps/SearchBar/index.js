@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import Button from '../Button';
 import InputText from '../Input'
@@ -19,14 +19,23 @@ const SearchBox = styled.input`
     border-radius: 6px;
 `;
 
-const SearchBar = ({ marginN, placeholder }) => {
-    return <Container marginN={marginN}>
-        <InputText placeholder={placeholder} margin="0px 24px 20px 0px" width="672px" />
-        <Button text="Search" maxWidth="184px" minHeight="59px" />
-    </Container>
+const SearchBar = ({ onClick, marginN, placeholder }) => {
+    const [subject, setSubject] = useState("");
+
+    return (
+        <Container marginN={marginN}>
+            <InputText placeholder={placeholder} margin="0px 24px 20px 0px" width="672px" onChange={(e) => {
+                setSubject(e.target.value);
+            }} />
+            <Button text="Search" maxWidth="184px" minHeight="59px" onClick={() => {
+                onClick(subject);
+            }} />
+        </Container>
+    )
 }
 
 SearchBar.defaultProps = {
+    onClick: () => { },
     marginN: "",
     placeholder: "Search Tutors by Subject"
 }

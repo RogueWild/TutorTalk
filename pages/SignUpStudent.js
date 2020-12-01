@@ -1,10 +1,10 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import LogoHeader from '../comps/LogoHeader';
 import HeaderAccount from '../comps/Header';
 import Button from '../comps/Button';
 import StudentSignUpForm from '../comps/StudentSignUpForm';
 
-import { Router, useRouter } from 'next/router'
+import { useRouter } from 'next/router'
 
 import Link from 'next/link';
 import * as network from '../network';

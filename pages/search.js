@@ -10,14 +10,10 @@ import * as network from '../network';
 import Link from 'next/link';
 
 export default function Search() {
-  // const [subject, setSubject] = useState("");
-
-  // const handleSearch = async () => {
-  //   // look here!! pls name the inputs for useState as these values in the argument
-  //   // the error will be gone til you add them
-  //   let data = await network.searchTutors(subject);
-  //   console.log(data);
-  // }
+  const handleSearch = async (subject) => {
+    let data = await network.searchTutors(subject);
+    console.log(data);
+  }
   // useEffect(() => {
   //   handleSearch();
   // }, [])
@@ -26,14 +22,14 @@ export default function Search() {
     <div className="search">
       <LogoHeader className="LogoHeader" displayIcon={true}></LogoHeader>
       <Nav className="Nav"></Nav>
-      <SearchBar className="SearchBar" marginN="40px 0px 100px 50px"></SearchBar>
+      <SearchBar className="SearchBar" marginN="40px 0px 100px 50px" onClick={handleSearch}></SearchBar>
 
-      <div className="search_content">
+      {/* <div className="search_content">
         <div className="search_left">
           <Link href="/profilePage">
-          <div className="ProfilePic">
-            <ProfilePhoto profileimg={true} choosefile={false}/>
-          </div></Link>
+            <div className="ProfilePic">
+              <ProfilePhoto profileimg={true} choosefile={false} />
+            </div></Link>
           <div className="Summary">
             <Summary />
           </div>
@@ -41,37 +37,7 @@ export default function Search() {
         <div className="search_right">
           <Contact className="Contact"></Contact>
         </div>
-      </div>
-
-      <div className="search_content">
-        <div className="search_left">
-          <Link href="/profilePage">
-          <div className="ProfilePic">
-          <ProfilePhoto profileimg={true} choosefile={false}/>
-          </div></ Link>
-          <div className="Summary">
-            <Summary />
-          </div>
-        </div>
-        <div className="search_right">
-          <Contact className="Contact"></Contact>
-        </div>
-      </div>
-
-      <div className="search_content">
-        <div className="search_left">
-          <Link href="/profilePage">
-          <div className="ProfilePic">
-          <ProfilePhoto profileimg={true} choosefile={false}/>
-          </div></Link>
-          <div className="Summary">
-            <Summary />
-          </div>
-        </div>
-        <div className="search_right">
-          <Contact className="Contact"></Contact>
-        </div>
-      </div>
+      </div> */}
     </div>
   )
 }
