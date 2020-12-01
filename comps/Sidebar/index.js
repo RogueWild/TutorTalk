@@ -4,7 +4,7 @@ import SidebarMenu from '../SidebarMenu';
 
 const SidebarBox = styled.div`
     max-width:360px;
-    height:100vh;
+    min-height:100%;
     background-color:#FEFBF3;
     display:flex;
     flex-direction:column;
@@ -16,38 +16,38 @@ const SidebarBox = styled.div`
 
 const Underline = styled.div`
     ${props => props.unPos === 0 && css`
-    top:90px;
-    min-width:120px;
+    bottom:320px;
+    width:120px;
     `};
     ${props => props.unPos === 1 && css`
-    top:150px;
-    min-width:70px;
+    bottom:255px;
+    width:70px;
     `};
     ${props => props.unPos === 2 && css`
-    top:210px;
-    min-width:60px;
+    bottom:195px;
+    width:60px;
     `};
     ${props => props.unPos === 3 && css`
-    top:270px;
-    min-width:70px;
+    bottom:135px;
+    width:70px;
     `};
     ${props => props.unPos === 4 && css`
-    top:335px;
-    min-width:85px;
+    bottom:70px;
+    width:85px;
     `};
     ${props => props.unPos === 5 && css`
-    top:395px;
-    min-width:50px;
+    bottom:10px;
+    width:50px;
     `};
     background-color:#FFBF00;
     min-height:3.5px;
     border-radius:15px;
-    position:absolute;
-    left:103px;
+    position:relative;
+    left:90px;
 `;
 
 const Sidebar = ({ }) => {
-    const [unPos, setUnPos] = useState(false);
+    const [unPos, setUnPos] = useState(0);
 
     useEffect(() => {
         setUnPos(unPos);

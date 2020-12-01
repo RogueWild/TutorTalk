@@ -7,7 +7,7 @@ const Container = styled.div`
     display: flex;
     align-items: left;
     justify-content: left;
-    margin: ${props => props.marginN ? props.marginN : ""}
+    margin: ${props => props.marginN ? props.marginN : ""};
 `;
 
 const SearchBox = styled.input`
@@ -27,7 +27,7 @@ const SearchBar = ({ onClick, marginN, placeholder }) => {
             <InputText placeholder={placeholder} margin="0px 24px 20px 0px" width="672px" onChange={(e) => {
                 setSubject(e.target.value);
             }} />
-            <Button text="Search" maxWidth="184px" minHeight="59px" onClick={() => {
+            <Button text="Search" maxWidth="184px" minHeight="50px" onClick={() => {
                 onClick(subject);
             }} />
         </Container>

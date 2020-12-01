@@ -22,10 +22,10 @@ const NavContent = styled.div`
 `;
 
 const NavBar = styled.div`
-    ${props=>props.position === 0 && css`
+    ${props=>props.position === "/StudentProfile" && css`
     left:28.8%;
     `};
-    ${props=>props.position === 0 && css`
+    ${props=>props.position === "/forumStudent" && css`
     left:39.3%;
     `};
     ${props=>props.position === "/tips" && css`
@@ -62,16 +62,15 @@ export const FramerCont = ({text}) => {
 }
 
 const Nav = ({}) => {
-    const [position, setPosition] = useState(false);
+    const [position, setPosition] = useState("");
 
     const router = useRouter();
 
     const handleProfile = async () => {
         router.push('../StudentProfile');
     }
-    //no forum yet
     const handleForum = async () => {
-        router.push('/forum');
+        router.push('/forumStudent');
     }
     const handleTutorTips = async () => {
         router.push('/tips');
@@ -81,13 +80,9 @@ const Nav = ({}) => {
     }
 
 
-    // useEffect(()=> {
-    //     setPosition(router.pathname)
-    // },[router.pathname])
-
-    useEffect(()=>{
-        setPosition(position);
-    }, [position])
+    useEffect(()=> {
+        setPosition(router.pathname)
+    },[router.pathname])
 
     return <NavBox>
             <NavContent>
@@ -97,12 +92,12 @@ const Nav = ({}) => {
                 </div>
 
                 <div onClick={()=>
-                    setPosition(0)}>
+                    setPosition(), handleForum}>
                     <FramerCont text="Forum"></FramerCont>
                 </div>
 
                 <div onClick={()=>
-                    setPosition(2), handleTutorTips}>
+                    setPosition(), handleTutorTips}>
                     <FramerCont text="Tutor Tips"></FramerCont>
                 </div>
 
