@@ -20,7 +20,7 @@ export default function mainPage() {
             alert("Please make sure to fill email and password");
         } else {
             let data = await network.login(email, password);
-            console.log(data);
+            // console.log(data);
             // check password
             if (data.userToken) {
                 // check user's role and send them to different profile pages

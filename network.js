@@ -33,7 +33,7 @@ export function login(email, password) {
 }
 
 // profile
-export function createStudentProfile(picture, program, helps, about) {
+export function createStudentProfile(picture, program, about) {
     return axios.post(host + '/profile/student/create', { picture, program, about })
         .then(data => {
             return data.data;

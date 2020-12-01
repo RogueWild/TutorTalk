@@ -45,15 +45,15 @@ export const FramerCont = ({ tutorname, tutorinfo }) => {
     </motion.div>
 }
 
-const Tips = ({ tutorname, tutorinfo, tiptext }) => {
+const Tips = ({ tutorname, tutorsubject, tipcontent }) => {
     return <TipsBox>
         <div className="tipstitle">
             <FramerCont
-                tutorname={tutorname} tutorinfo={tutorinfo}>
+                tutorname={tutorname} tutorinfo={tutorsubject}>
             </FramerCont>
         </div>
         <div className="tiptextbox">
-            <div className="tiptext">{tiptext}</div>
+            <div className="tiptext">{tipcontent}</div>
         </div>
     </TipsBox>
 

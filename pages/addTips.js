@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import LogoHeader from '../comps/LogoHeader';
 import Nav from '../comps/Nav';
 import InputLabel from '../comps/InputLabel';
@@ -14,9 +14,13 @@ export default function Home() {
     const router = useRouter();
 
     const handleAddTip = async () => {
-        let data = await network.createTip(subject, content);
-        console.log(data);
-        router.push('/tips');
+        if (!subject || !content) {
+            alert("Please make sure to fill both subject and content for your tip!")
+        } else {
+            let data = await network.createTip(subject, content);
+            // console.log(data);
+            router.push('/tips');
+        }
     }
 
     return (
