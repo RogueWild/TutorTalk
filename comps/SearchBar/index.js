@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import styled, { css } from 'styled-components';
+import React from 'react';
+import styled from 'styled-components';
 import Button from '../Button';
 import InputText from '../Input'
 
@@ -7,7 +7,7 @@ const Container = styled.div`
     display: flex;
     align-items: left;
     justify-content: left;
-    margin: ${props=>props.marginN ? props.marginN : ""}
+    margin: ${props => props.marginN ? props.marginN : ""}
 `;
 
 const SearchBox = styled.input`
@@ -19,16 +19,16 @@ const SearchBox = styled.input`
     border-radius: 6px;
 `;
 
-const SearchBar = ({marginN, placeholder}) => {
+const SearchBar = ({ marginN, placeholder }) => {
     return <Container marginN={marginN}>
-    <InputText placeholder={placeholder} margin="0px 24px 20px 0px" width="672px"/>
-        <Button text="Search" maxWidth="184px" minHeight="59px"/>
+        <InputText placeholder={placeholder} margin="0px 24px 20px 0px" width="672px" />
+        <Button text="Search" maxWidth="184px" minHeight="59px" />
     </Container>
 }
 
 SearchBar.defaultProps = {
     marginN: "",
-    placeholder: "Search Tutors"
+    placeholder: "Search Tutors by Subject"
 }
 
 export default SearchBar;
