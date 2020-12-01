@@ -14,14 +14,15 @@ const InputBox = styled.input`
     }
 `;
 
-const InputText = ({ placeholder, width, margin, onChange }) => {
-    return <InputBox placeholder={placeholder} width={width} margin={margin} onChange={onChange}>
+const InputText = ({ placeholder, width, margin, onChange, onKeyPress }) => {
+    return <InputBox placeholder={placeholder} width={width} margin={margin} onChange={onChange} onKeyPress={onKeyPress}>
     </InputBox>
 }
 
 
 InputText.defaultProps = {
-    placeholder: "Write something about yourself"
+    placeholder: "Write something about yourself",
+    onKeyPress:()=>{},
 }
 
 export default InputText;

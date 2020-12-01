@@ -14,6 +14,12 @@ export default function mainPage() {
 
     const router = useRouter();
 
+    function handleEnter(event) {
+        if (event.key === 'Enter') {
+            handleLogin();
+        }
+      }
+
     const handleLogin = async () => {
         // inputs content validation
         if (!email || !password) {
@@ -50,10 +56,10 @@ export default function mainPage() {
                         setEmail(e.target.value)
                     }} />
                     <Input placeholder="Password" width="50%" margin="10px 0px 0px 0px" onChange={(e) => {
-                        setPassword(e.target.value)
-                    }} />
+                        setPassword(e.target.value) 
+                    }} onKeyPress={handleEnter} />
                     <div className="buttons">
-                        <Button text="Log in" margin="40px 0px 0px 0px" onClick={handleLogin} />
+                        <Button text="Log in" margin="40px 0px 0px 0px" onClick={handleLogin} value="Submit" />
                     </div>
                 </div>
 
