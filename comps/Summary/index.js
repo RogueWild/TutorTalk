@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import Brief from '../Brief';
 
 const Container = styled.div`
@@ -30,22 +30,22 @@ const SubHeader = styled.h2`
     color: #000000;
 `;
 
-const Summary = ({HeadTxt, SubTxt, story}) => {
-    return <Container> 
-        <Header >{HeadTxt}</Header>
-        <SubHeader>{SubTxt}</SubHeader>
-        
-        {story === false ? null : <Brief image={true} width="498px"/>}
-        {story === false ? null :<Brief image={true} src="/mortarboard.png" text="Diploma of Computer Science
-    Studying for Bachelor’s of Computer Science" width="455px"/>}
-        {story === false ? null :<Brief marL="42px" width="280px" text="Mondays – 13:30-17:30 Thursdays – 9:00-12:00 Zoom Link: www.zoomlink.com"/>}
+const Summary = ({ name, subject, story }) => {
+    return <Container>
+        <Header >{name}</Header>
+        <SubHeader>{subject}</SubHeader>
+
+        {story === false ? null : <Brief image={true} width="498px" />}
+        {story === false ? null : <Brief image={true} src="/mortarboard.png" text="Diploma of Computer Science
+    Studying for Bachelor’s of Computer Science" width="455px" />}
+        {story === false ? null : <Brief marL="42px" width="280px" text="Mondays – 13:30-17:30 Thursdays – 9:00-12:00 Zoom Link: www.zoomlink.com" />}
     </Container>
 
 }
 
 Summary.defaultProps = {
-    HeadTxt: "Sarah Lee",
-    SubTxt: "Peer Tutor, Computer Science, BCIT",
+    name: "Sarah Lee",
+    subject: "Peer Tutor, Computer Science, BCIT",
     width: "",
     marL: "",
     story: true
