@@ -9,6 +9,7 @@ const TipsBox = styled.div`
     background-color:#FFF3D3;
     border-radius:5px;
     padding:20px;
+    margin-bottom:35px;
 
     .tiptextbox{
         background-color:#FFF;
@@ -35,7 +36,7 @@ const TutorInfo = styled.div`
 `;
 
 export const FramerCont = ({ tutorname, tutorinfo }) => {
-    return <motion.div whileHover={{ scale: 1.015 }}>
+    return <motion.div whileHover={{ x:10 }}>
         <TutorName>
             {tutorname}
         </TutorName>
