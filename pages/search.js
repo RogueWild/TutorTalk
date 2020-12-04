@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import LogoHeader from '../comps/LogoHeader';
 import Nav from '../comps/Nav';
 import SearchBar from '../comps/SearchBar';
-import ProfilePic from '../comps/ProfilePic';
+// import ProfilePic from '../comps/ProfilePic';
 import ProfilePhoto from '../comps/ProfilePhoto';
 import Summary from '../comps/Summary';
 import Contact from '../comps/Contact';

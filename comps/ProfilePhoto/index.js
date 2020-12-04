@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import FileInput from '../FileInput';
 
 const ProfilePhotoCont = styled.div`
-    ${props=> props.choosefile === false && css`
+    ${props => props.choosefile === false && css`
     background-color:#FFF;
     `};
     width:371px;
@@ -15,7 +15,8 @@ const ProfilePhotoCont = styled.div`
 `;
 
 const ProfilePhotoSelect = styled.input.attrs({
-    type:'file',
+    type: 'file',
+    name: 'picture'
 })`
     background-color:#FCCA36;
     padding:15px 38px;
@@ -29,7 +30,7 @@ const ProfilePhotoSelect = styled.input.attrs({
 `;
 
 const ProfilePhotoImg = styled.img`
-    ${props=> props.profileimg === false && css`
+    ${props => props.profileimg === false && css`
     display:none;
     `};
     max-width:371px;
@@ -39,18 +40,18 @@ const ProfilePhotoImg = styled.img`
 `;
 
 
-const ProfilePhoto = ({profileimg, choosefile, src}) => {
-    return <ProfilePhotoCont choosefile={choosefile}>
-        <ProfilePhotoSelect>
+const ProfilePhoto = ({ profileimg, choosefile, src, onChange }) => {
+    return <ProfilePhotoCont choosefile={choosefile} onChange={onChange}>
+        <ProfilePhotoSelect onChange={onChange}>
         </ProfilePhotoSelect>
-        <ProfilePhotoImg src={src} profileimg={profileimg}/>
+        <ProfilePhotoImg src={src} profileimg={profileimg} />
     </ProfilePhotoCont>
 }
 
 
 ProfilePhoto.defaultProps = {
-    profileimg:false,
-    choosefile:true,
+    profileimg: false,
+    choosefile: true,
     src: "profilepic.jpg"
 }
 
