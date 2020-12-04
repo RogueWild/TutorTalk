@@ -29,17 +29,45 @@ export default function Search() {
       {/* {tutors.map((tutor, i) => { */}
       <div className="search_content">
         <div className="search_left">
+        </div>
+        <div className="tutor">
           <Link href="/profilePage">
             <div className="ProfilePic">
-              {/* <ProfilePhoto profileimg={true} choosefile={false} /> */}
+              <ProfilePhoto profileimg={true} choosefile={false} />
             </div>
           </Link>
           <div className="Summary">
             <Summary />
           </div>
+          <div className="search_right">
+            <Contact className="Contact" />
+          </div>
         </div>
-        <div className="search_right">
-          <Contact className="Contact"></Contact>
+        <div className="tutor">
+        <Link href="/profilePage">
+            <div className="ProfilePic">
+              <ProfilePhoto profileimg={true} choosefile={false} />
+            </div>
+          </Link>
+          <div className="Summary">
+            <Summary />
+          </div>
+          <div className="search_right">
+            <Contact className="Contact" />
+          </div>
+        </div>
+        <div className="tutor">
+        <Link href="/profilePage">
+            <div className="ProfilePic">
+              <ProfilePhoto profileimg={true} choosefile={false} />
+            </div>
+          </Link>
+          <div className="Summary">
+            <Summary />
+          </div>
+          <div className="search_right">
+            <Contact text="text" className="Contact" />
+          </div>
         </div>
       </div>
       {/* })} */}

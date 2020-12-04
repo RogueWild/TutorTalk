@@ -12,11 +12,11 @@ import * as network from '../network';
 export default function profilePage() {
 
     // Henry's example
-    // const [about, setAbout] = useState("")
+    const [about, setAbout] = useState("");
     const HandleProfile = async () => {
         var resp = await network.viewTutorProfile;
         // below line is henry's example
-        setAbout(resp.data.about)
+        setAbout(resp.data.about);
     }
 
     useEffect(() => {
@@ -36,7 +36,7 @@ export default function profilePage() {
                 <div className="right-side">
                     <Summary />
                     <div className="about-box">
-                        {/* text={about} */}
+                        text={about}
                         <AboutBox color={0} text2={"About"} text={"some dummy data"} size={0} />
                     </div>
                 </div>

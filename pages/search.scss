@@ -5,18 +5,26 @@ html, body {
     background-color: white;
     .search_content {
         display: flex;
+        flex-direction: column;
         margin-bottom: 200px;
+        margin-left: 50px;
         .search_left, .search_right {
             display:flex;
-            .ProfilePic {
-                cursor:pointer;
-            }
+
+        }
+        .ProfilePic {
+            cursor:pointer;
+            margin-right: 50px;
+            margin-bottom: 50px;
         }
         .search_left {
             margin-left: 70px;
             .Summary {
                 margin-left: 50px;
             }
+        }
+        .tutor {
+            display: flex;
         }
     }
 }
