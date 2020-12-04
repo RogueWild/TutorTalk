@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styled, { css } from 'styled-components';
 import SidebarMenu from '../SidebarMenu';
+import Link from 'next/link';
 
 const SidebarBox = styled.div`
     max-width:360px;
@@ -59,27 +60,34 @@ const Sidebar = ({ }) => {
             <SidebarMenu text="Dashboard" source="/dash.png" />
         </div>
 
-        <div onClick={() =>
-            setUnPos(1)}>
-            <SidebarMenu text="Tutors" source="/cap.png" />
-        </div>
+        <Link href="/search">
+            <div onClick={() =>
+                setUnPos(1)}>
+                <SidebarMenu text="Tutors" source="/cap.png" />
+            </div>
+        </Link>
+
+
         <div onClick={() =>
             setUnPos(2)}>
             <SidebarMenu text="Chats" source="/chat.png" />
         </div>
-        <div onClick={() =>
-            setUnPos(3)}>
-            <SidebarMenu text="Profile" source="/user.png" />
-        </div>
-        <div onClick={() =>
-            setUnPos(4)}>
-            <SidebarMenu text="Settings" source="/settings.png" />
-        </div>
-        <div onClick={() =>
-            setUnPos(5)}>
-            <SidebarMenu text="Help" source="/question.png" />
-        </div>
-            
+
+        <Link href="/StudentProfile">
+            <div onClick={() =>
+                setUnPos(3)}>
+                <SidebarMenu text="Profile" source="/user.png" />
+            </div>
+        </Link>
+
+        <Link href="/accountSettings">
+            <div onClick={() =>
+                setUnPos(4)}>
+                <SidebarMenu text="Settings" source="/settings.png" />
+            </div>
+        </Link>
+
+
         <Underline unPos={unPos} />
     </SidebarBox>
 }

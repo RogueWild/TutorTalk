@@ -6,13 +6,9 @@ import Sidebar from '../comps/Sidebar';
 import Chat from '../comps/Chat';
 import Button from '../comps/Button';
 
-import * as network from '../network';
+import { useRouter } from 'next/router';
 
 export default function forumStudent() {
-
-    const HandleProfile = async () => {
-        var resp = await network.viewTutorProfile;
-    }
 
     return (
         <div>
@@ -28,8 +24,8 @@ export default function forumStudent() {
                         <div className="chat_box">
                             <h2>Accounting</h2>
                             <div className="chat_comp">
-                                <Chat username="Matt" time="Yesterday at 5:42 PM" chatText="I don’t understand what accrual accounting is" />
-                                <Chat username="Chris Young" time="Today at 5:42 PM" chatText="I don’t understand what accrual accounting is"  />
+                                <Chat username="Matt" time="Yesterday at 5:42 PM" chatText="What's is tuple?" />
+                                <Chat username="Chris Young" time="Today at 6:15 PM" chatText="I don’t know" />
                             </div>
                             <textarea className="reply_input" type="text" >
 
@@ -41,8 +37,8 @@ export default function forumStudent() {
                         <div className="chat_box">
                             <h2>Computer Science</h2>
                             <div className="chat_comp">
-                                <Chat username="Matt" time="Yesterday at 5:42 PM" chatText="Can someone explain nested for loops?" />
-                                <Chat username="Chris Young" time="Today at 5:42 PM" chatText="Sure. Nested for loops are..... and here’s an example:"  />
+                                <Chat username="Matt" time="Yesterday at 6:12 PM" chatText="Can someone explain nested loops?" />
+                                <Chat username="Chris Young" time="Today at 6:32 PM" chatText="Sure. Nested loops are..... and here’s an example:" />
                             </div>
                             <textarea className="reply_input" type="text" >
 
