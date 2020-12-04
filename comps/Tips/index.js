@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 
 const TipsBox = styled.div`
     display:flex;
@@ -36,10 +37,13 @@ const TutorInfo = styled.div`
 `;
 
 export const FramerCont = ({ tutorname, tutorinfo }) => {
-    return <motion.div whileHover={{ x:10 }}>
-        <TutorName>
-            {tutorname}
-        </TutorName>
+    return <motion.div whileHover={{ x: 10 }}>
+        <Link href="/profilePage">
+            <TutorName>
+                {tutorname}
+            </TutorName>
+        </Link>
+
         <TutorInfo>
             {tutorinfo}
         </TutorInfo>

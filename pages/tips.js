@@ -46,7 +46,9 @@ export default function TipsPage() {
         </div>
         <div className="tips_content">
           {tips.map((tip, i) => {
-            return <Tips key={i} tutorname={tip.tutor} tutorsubject={tip.subject} tipcontent={tip.content} />
+            return (
+              <Tips key={i} tutorname={tip.tutor} tutorsubject={tip.subject} tipcontent={tip.content} />
+            )
           })}
         </div>
       </div>
