@@ -29,9 +29,9 @@ export default function StudentProfilePage() {
                     <ProfilePhoto profileimg={true} src="profilepic2.png" />
                 </div>
                 <div className="right-side">
-                    <Summary image={true} story={false} name={profile.name} subject={profile.program} />
+                    <Summary image={true} story={false} />
                     <div className="about-box">
-                        <AboutBox color={0} text2={"About"} text={profile.about} size={0} />
+                        <AboutBox color={0} text2={"About"} size={0} />
                     </div>
                 </div>
             </div>
