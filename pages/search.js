@@ -26,24 +26,23 @@ export default function Search() {
 
       {/* display each search result of tutors */}
       {/* TO-DO: display msg when no tutors found!!!!!! */}
-      {tutors.map((tutor, i) => {
-        <div className="search_content">
-          <div className="search_left">
-            <Link href="/profilePage">
-              <div className="ProfilePic">
-                {/* TO_DO: finish profile first, work on this after */}
-                <ProfilePhoto profileimg={true} choosefile={false} />
-              </div>
-            </Link>
-            <div className="Summary">
-              <Summary key={i} name={tutor.firstname + tutor.lastname} />
+      {/* {tutors.map((tutor, i) => { */}
+      <div className="search_content">
+        <div className="search_left">
+          <Link href="/profilePage">
+            <div className="ProfilePic">
+              {/* <ProfilePhoto profileimg={true} choosefile={false} /> */}
             </div>
-          </div>
-          <div className="search_right">
-            <Contact className="Contact"></Contact>
+          </Link>
+          <div className="Summary">
+            <Summary />
           </div>
         </div>
-      })}
+        <div className="search_right">
+          <Contact className="Contact"></Contact>
+        </div>
+      </div>
+      {/* })} */}
     </div>
   )
 }

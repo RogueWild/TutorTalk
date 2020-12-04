@@ -10,7 +10,7 @@ const Container = styled.div`
     align-items: left;
     flex-direction: column;
 `;
-const Contact = ({ image }) => {
+const Contact = ({ }) => {
     return <Container>
         <Brief image={true} src="/phone.png" width="498px" text="(604)284-9574" />
         <Brief image={true} src="/message.png" text="emailname@gmail.com" width="455px" TxtColor="#FFBF00" />
