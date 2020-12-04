@@ -10,18 +10,25 @@ html, body {
         margin-left: 50px;
         .search_left, .search_right {
             display:flex;
-
         }
         .ProfilePic {
             cursor:pointer;
             margin-right: 50px;
-            margin-bottom: 50px;
+            margin-bottom: 17%;
+
+            :hover {
+                filter: brightness(1.03);
+            }
         }
         .search_left {
             margin-left: 70px;
             .Summary {
                 margin-left: 50px;
             }
+        }
+        .search_right {
+            position: relative;
+            bottom: 100px;
         }
         .tutor {
             display: flex;

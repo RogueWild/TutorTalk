@@ -19,9 +19,9 @@ export default function profilePage() {
         setAbout(resp.data.about);
     }
 
-    useEffect(() => {
-        HandleProfile();
-    }, [])
+    // useEffect(() => {
+    //     HandleProfile();
+    // }, [])
 
     return (
         <div>
@@ -31,12 +31,17 @@ export default function profilePage() {
             <div className="content-box">
                 <div className="left-side">
                     <ProfilePhoto profileimg={true} />
-                    <div className="contact"><Contact /></div>
+                    <div className="contact"><Contact
+                        timeAndZoom="Mondays – 13:30-17:30 Thursdays – 9:00-12:00 Zoom Link: www.zoomlink.com"
+                    /></div>
                 </div>
                 <div className="right-side">
-                    <Summary />
+                    <Summary
+                        work="Works at Web Development Company in Burnaby"
+                        education="Diploma of Computer Science Studying for Bachelor’s of Computer Science"
+                    />
                     <div className="about-box">
-                        text={about}
+                        {/* text={about} */}
                         <AboutBox color={0} text2={"About"} text={"some dummy data"} size={0} />
                     </div>
                 </div>
