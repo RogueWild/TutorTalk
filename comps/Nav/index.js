@@ -112,7 +112,7 @@ const Nav = ({}) => {
 }
 
 Nav.defaultProps = {
-    position:0
+    position:"/StudentProfile"
 }
 
 export default Nav;

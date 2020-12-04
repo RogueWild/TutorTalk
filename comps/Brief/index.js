@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import styled, {css} from 'styled-components';
+import styled, { css } from 'styled-components';
 
 const Container = styled.div`
     margin: 5px 0px;
-    width: ${props=>props.width ? props.width : ""};
+    width: ${props => props.width ? props.width : ""};
     min-height: 50px;
     display: inline-flex;
     justify-content: left;
@@ -23,24 +23,22 @@ const TextData = styled.p`
     font-size: 20px;
     line-height: 24px;
     color: #424242;
-    margin-left: ${props=>props.marL ? props.marL : ""};
+    margin-left: ${props => props.marL ? props.marL : ""};
     text-align: left;
+    color:${props => props.color ? props.color : ""};
 `;
 
-const Brief = ({src,text,image,width,marL}) => {
+const Brief = ({ src, text, image, width, marL, color }) => {
     return <Container width={width}>
-    {image === false ? null : <IconImg src={src}></IconImg>
-} <TextData marL = {marL}>{text}</TextData>
-</Container>
+        {image === false ? null : <IconImg src={src}></IconImg>}
+        <TextData marL={marL} color={color}>{text}</TextData>
+    </Container>
 }
 
 Brief.defaultProps = {
-    src: "/briefcase.png",
-    text: "Work at Web Development Company in Burnaby",
     image: false,
     width: "",
     marL: ""
 }
-
 
 export default Brief;
