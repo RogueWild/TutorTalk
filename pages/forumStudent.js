@@ -24,7 +24,7 @@ export default function forumStudent() {
                         <div className="chat_box">
                             <h2>Accounting</h2>
                             <div className="chat_comp">
-                                <Chat username="Matt" time="Yesterday at 5:42 PM" chatText="What's is tuple?" />
+                                <Chat username="Matt" time="Yesterday at 5:42 PM" chatText="What is tuple?" />
                                 <Chat username="Chris Young" time="Today at 6:15 PM" chatText="I don’t know" />
                             </div>
                             <textarea className="reply_input" type="text" >

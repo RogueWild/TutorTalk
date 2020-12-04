@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import styled, { css } from 'styled-components';
 import { motion } from 'framer-motion';
 
-import {Router, useRouter} from 'next/router';
+import { Router, useRouter } from 'next/router';
 
 const NavBox = styled.div`
    display:flex;
@@ -22,16 +22,16 @@ const NavContent = styled.div`
 `;
 
 const NavBar = styled.div`
-    ${props=>props.position === "/StudentProfile" && css`
+    ${props => props.position === "/StudentProfile" && css`
     left:28.8%;
     `};
-    ${props=>props.position === "/forumStudent" && css`
+    ${props => props.position === "/forumStudent" && css`
     left:39.3%;
     `};
-    ${props=>props.position === "/tips" && css`
+    ${props => props.position === "/tips" && css`
     left:50.8%;
     `};
-    ${props=>props.position === "/search" && css`
+    ${props => props.position === "/search" && css`
     left:62.5%;
     `};
     background-color:#424242;
@@ -53,15 +53,15 @@ const NavMenu = styled.div`
     font-weight:bold; 
 `;
 
-export const FramerCont = ({text}) => {
-    return <motion.div whileHover={{scale:1.1}}>
+export const FramerCont = ({ text }) => {
+    return <motion.div whileHover={{ scale: 1.1 }}>
         <NavMenu>
             {text}
         </NavMenu>
     </motion.div>
 }
 
-const Nav = ({}) => {
+const Nav = ({ }) => {
     const [position, setPosition] = useState("");
 
     const router = useRouter();
@@ -80,39 +80,39 @@ const Nav = ({}) => {
     }
 
 
-    useEffect(()=> {
+    useEffect(() => {
         setPosition(router.pathname)
-    },[router.pathname])
+    }, [router.pathname])
 
     return <NavBox>
-            <NavContent>
-                <div onClick={()=>
-                    setPosition(), handleProfile}>
-                    <FramerCont text="Profile"></FramerCont>
-                </div>
+        <NavContent>
+            <div onClick={() =>
+                setPosition(), handleProfile}>
+                <FramerCont text="Profile"></FramerCont>
+            </div>
 
-                <div onClick={()=>
-                    setPosition(), handleForum}>
-                    <FramerCont text="Forum"></FramerCont>
-                </div>
+            <div onClick={() =>
+                setPosition(), handleForum}>
+                <FramerCont text="Forum"></FramerCont>
+            </div>
 
-                <div onClick={()=>
-                    setPosition(), handleTutorTips}>
-                    <FramerCont text="Tutor Tips"></FramerCont>
-                </div>
+            <div onClick={() =>
+                setPosition(), handleTutorTips}>
+                <FramerCont text="Tutor Tips"></FramerCont>
+            </div>
 
-                <div onClick={()=>
-                    setPosition(), handleTutors}>
-                    <FramerCont text="Tutors"></FramerCont>
-                </div>
+            <div onClick={() =>
+                setPosition(), handleTutors}>
+                <FramerCont text="Tutors"></FramerCont>
+            </div>
 
-                <NavBar position={position}></NavBar>
-            </NavContent>
-        </NavBox>
+            <NavBar position={position}></NavBar>
+        </NavContent>
+    </NavBox>
 }
 
 Nav.defaultProps = {
-    position:"/StudentProfile"
+    position: "/StudentProfile"
 }
 
 export default Nav;

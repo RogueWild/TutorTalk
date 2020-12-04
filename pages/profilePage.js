@@ -12,12 +12,12 @@ import * as network from '../network';
 export default function profilePage() {
 
     // Henry's example
-    const [about, setAbout] = useState("");
-    const HandleProfile = async () => {
-        var resp = await network.viewTutorProfile;
-        // below line is henry's example
-        setAbout(resp.data.about);
-    }
+    // const [about, setAbout] = useState("");
+    // const HandleProfile = async () => {
+    //     var resp = await network.viewTutorProfile;
+    //     // below line is henry's example
+    //     setAbout(resp.data.about);
+    // }
 
     // useEffect(() => {
     //     HandleProfile();
@@ -31,9 +31,10 @@ export default function profilePage() {
             <div className="content-box">
                 <div className="left-side">
                     <ProfilePhoto profileimg={true} />
-                    <div className="contact"><Contact
-                        timeAndZoom="Mondays – 13:30-17:30 Thursdays – 9:00-12:00 Zoom Link: www.zoomlink.com"
-                    /></div>
+                    <div className="contact">
+                        <Contact timeAndZoom="Mondays – 13:30-17:30 Thursdays – 9:00-12:00 Zoom Link: www.zoomlink.com"
+                        />
+                    </div>
                 </div>
                 <div className="right-side">
                     <Summary
@@ -41,8 +42,7 @@ export default function profilePage() {
                         education="Diploma of Computer Science Studying for Bachelor’s of Computer Science"
                     />
                     <div className="about-box">
-                        {/* text={about} */}
-                        <AboutBox color={0} text2={"About"} text={"some dummy data"} size={0} />
+                        <AboutBox color={0} text2={"About"} text={"I’m a Computer Science student at BCIT, and I’m passionate about helping others learn while I learn! I have a good understanding of interdisciplinary computer programming. Ask me anything and I’ll try to help you out. Email me or give me a call and leave a voice mail. I like to teach through Zoom; once you reach out and we seem like a good student/ tutor fit, I will set up a meeting for us on Zoom. "} size={0} />
                     </div>
                 </div>
             </div>

@@ -18,7 +18,7 @@ export default function mainPage() {
         if (event.key === 'Enter') {
             handleLogin();
         }
-      }
+    }
 
     const handleLogin = async () => {
         // inputs content validation
@@ -33,7 +33,7 @@ export default function mainPage() {
                 if (data.role == "student") {
                     router.push("/StudentProfileEdit");
                 } else {
-                    router.push("/profileEditPage");
+                    router.push("/profilePage");
                 }
             } else {
                 alert("Incorrect email or password");
@@ -56,7 +56,7 @@ export default function mainPage() {
                         setEmail(e.target.value)
                     }} />
                     <Input placeholder="Password" width="50%" margin="10px 0px 0px 0px" onChange={(e) => {
-                        setPassword(e.target.value) 
+                        setPassword(e.target.value)
                     }} onKeyPress={handleEnter} />
                     <div className="buttons">
                         <Button text="Log in" margin="40px 0px 0px 0px" onClick={handleLogin} value="Submit" />
